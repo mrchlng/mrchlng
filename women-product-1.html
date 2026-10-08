@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Women's Product 1</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f3ee;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 35px 20px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: #222;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .details h1 {
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .description {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .shop {
+      display: inline-block;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      padding: 13px 25px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .shop:hover {
+      background: #444;
+    }
+
+    .featured {
+      margin-top: 55px;
+    }
+
+    .featured h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .featured-products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .featured-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .featured-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .featured-card p {
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .product {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        height: 350px;
+      }
+
+      .featured-products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <a href="women.html" class="back">← Back to Women's Essentials</a>
+
+  <div class="product">
+
+    <img
+      src="WOMEN-PRODUCT-1-IMAGE"
+      alt="Women's Product 1"
+      class="product-image"
+    >
+
+    <div class="details">
+
+      <h1>Women's Product 1</h1>
+
+      <div class="description">
+        This is where your product description goes.
+        Add the important details, features, materials,
+        benefits, or anything useful about the product here.
+      </div>
+
+      <a
+        href="YOUR-AMAZON-AFFILIATE-LINK"
+        target="_blank"
+        class="shop"
+      >
+        Shop Now
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <section class="featured">
+
+    <h2>Featured Products</h2>
+
+    <div class="featured-products">
+
+      <div class="featured-card">
+        <img src="FEATURED-PRODUCT-1-IMAGE" alt="Featured Product 1">
+        <p>Featured Product 1</p>
+      </div>
+
+      <div class="featured-card">
+        <img src="FEATURED-PRODUCT-2-IMAGE" alt="Featured Product 2">
+        <p>Featured Product 2</p>
+      </div>
+
+      <div class="featured-card">
+        <img src="FEATURED-PRODUCT-3-IMAGE" alt="Featured Product 3">
+        <p>Featured Product 3</p>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+</body>
+</html>
