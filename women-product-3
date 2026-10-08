@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LANEIGE Lip Sleeping Mask</title>
+  <title>medicube Zero Pore Pad 2.0</title>
 
   <style>
   * {
@@ -223,7 +223,7 @@
 
   <img
     id="mainImage"
-    src="laneige1.jpg"
+    src="medicube1.jpg"
     alt="LANEIGE Lip Sleeping Mask"
     class="product-image"
   >
@@ -231,26 +231,26 @@
   <div class="thumbnails">
 
     <img
-      src="laneige1.jpg"
-      alt="LANEIGE Lip Sleeping Mask 1"
+      src="medicube2.jpg"
+      alt="medicube Zero Pore Pad 2.0 1"
       onclick="changeImage(this.src)"
     >
 
     <img
-      src="laneige2.jpg"
-      alt="LANEIGE Lip Sleeping Mask2"
+      src="medicube3.jpg"
+      alt="medicube Zero Pore Pad 2.0 2"
       onclick="changeImage(this.src)"
     >
 
     <img
-      src="laneige3.jpg"
-      alt="LANEIGE Lip Sleeping Mask 3"
+      src="medicube4.jpg"
+      alt="medicube Zero Pore Pad 2.0 3"
       onclick="changeImage(this.src)"
     >
 
     <img
       src="laneige4.jpg"
-      alt="LANEIGE Lip Sleeping Mask 4"
+      alt="medicube Zero Pore Pad 2.0 44"
       onclick="changeImage(this.src)"
     >
 
@@ -260,10 +260,11 @@
 
     <div class="details">
 
-      <h1>LANEIGE Lip Sleeping Mask</h1>
+      <h1>medicube Zero Pore Pad 2.0</h1>
 
       <div class="description">
-  A nourishing overnight lip mask that helps moisturize dry lips and leaves them feeling soft, smooth, and refreshed by morning.
+  A refreshing toner pad that gently exfoliates, helps refine the look of pores, and leaves skin feeling smoother, cleaner, and refreshed.
+
 
 </div>
 
@@ -271,9 +272,9 @@
   <h2>Why We Like It</h2>
 
   <ul>
-    <li>Helps keep lips feeling soft and moisturized</li>
-    <li>Easy to use as part of a nighttime routine</li>
-    <li>Leaves lips feeling smooth and comfortable</li>
+    <li>Gently exfoliates for smoother-feeling skin</li>
+    <li>Helps refine the look of pores</li>
+    <li>Convenient pre-soaked pads for easy use</li>
   </ul>
 </div>
 
@@ -281,12 +282,12 @@
   <h2>Best For</h2>
 
   <p>
-    People looking for a simple overnight lip care treatment.
+    People looking for an easy way to exfoliate and care for the appearance of pores.
   </p>
 </div>
 
     <a
-  href="https://link.amazon/B0hVXw5j3"
+  href="https://link.amazon/B0badzO9N"
   class="shop"
   target="_blank"
   rel="nofollow sponsored noopener"
