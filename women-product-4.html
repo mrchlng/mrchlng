@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>medicube Zero Pore Pad 2.0</title>
+
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f7f3ee;
+    color: #222;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 35px 20px;
+  }
+
+  .back {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .product {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  }
+
+  .product-image {
+    width: 100%;
+    height: 480px;
+    object-fit: contain;
+    background: #f7f7f7;
+    border-radius: 12px;
+    display: block;
+  }
+
+  .gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .thumbnails img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.2s;
+  }
+
+  .thumbnails img:hover {
+    border-color: #222;
+    opacity: 0.85;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .details h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .description {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 28px;
+    font-size: 15px;
+  }
+
+  /* WHY WE LIKE IT */
+
+  .highlights {
+    margin-bottom: 30px;
+    color: #666;
+  }
+
+  .highlights h2 {
+    font-size: 15px;
+    font-weight: normal;
+    color: #222;
+    margin-bottom: 12px;
+  }
+
+  .highlights ul {
+    padding-left: 20px;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .highlights li {
+  color: #666;
+}
+
+.best-for {
+  margin-bottom: 30px;
+}
+
+.best-for h2 {
+  font-size: 15px;
+  font-weight: normal;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.best-for p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+  /* SHOP BUTTON */
+
+  .shop {
+    display: inline-block;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+
+  .shop:hover {
+    background: #444;
+    transform: translateY(-2px);
+  }
+
+  /* MOBILE */
+
+  @media (max-width: 700px) {
+
+    .container {
+      padding: 20px 14px;
+    }
+
+    .product {
+      grid-template-columns: 1fr;
+      padding: 18px;
+      gap: 25px;
+      border-radius: 14px;
+    }
+
+    .product-image {
+      height: 330px;
+    }
+
+    .details h1 {
+      font-size: 26px;
+    }
+
+    .description {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .highlights h2 {
+      font-size: 14px;
+    }
+
+    .highlights ul {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .shop {
+      width: 100%;
+      padding: 15px;
+    }
+
+    .thumbnails img {
+      height: 75px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <a href="women.html" class="back">← Back to Women's Essentials</a>
+
+  <div class="product">
+
+    <div class="gallery">
+
+  <img
+    id="mainImage"
+    src="medicube1.jpg"
+    alt="medicube Zero Pore Pad 2."
+    class="product-image"
+  >
+
+  <div class="thumbnails">
+
+    <img
+      src="medicube1.jpg"
+      alt="medicube Zero Pore Pad 2.0 1"
+      onclick="changeImage(this.src)"
+    >
+
+    <img
+      src="medicube2.jpg"
+      alt="medicube Zero Pore Pad 2.0 2"
+      onclick="changeImage(this.src)"
+    >
+
+    <img
+      src="medicube3.jpg"
+      alt="medicube Zero Pore Pad 2.0 3"
+      onclick="changeImage(this.src)"
+    >
+
+    <img
+      src="medicube4.jpg"
+      alt="medicube Zero Pore Pad 2.0 44"
+      onclick="changeImage(this.src)"
+    >
+
+  </div>
+
+</div>
+
+    <div class="details">
+
+      <h1>medicube Zero Pore Pad 2.0</h1>
+
+      <div class="description">
+  A refreshing toner pad that gently exfoliates, helps refine the look of pores, and leaves skin feeling smoother, cleaner, and refreshed.
+
+
+</div>
+
+<div class="highlights">
+  <h2>Why We Like It</h2>
+
+  <ul>
+    <li>Gently exfoliates for smoother-feeling skin</li>
+    <li>Helps refine the look of pores</li>
+    <li>Convenient pre-soaked pads for easy use</li>
+  </ul>
+</div>
+
+<div class="best-for">
+  <h2>Best For</h2>
+
+  <p>
+    People looking for an easy way to exfoliate and care for the appearance of pores.
+  </p>
+</div>
+
+    <a
+  href="https://link.amazon/B0badzO9N"
+  class="shop"
+  target="_blank"
+  rel="nofollow sponsored noopener"
+>
+  Check Price on Amazon 
+</a>
+
+    </div>
+
+  </div>
+
+  <script>
+  function changeImage(image) {
+    document.getElementById("mainImage").src = image;
+  }
+</script>
+  
+</body>
+</html>
