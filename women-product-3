@@ -224,32 +224,32 @@
   <img
     id="mainImage"
     src="medicube1.jpg"
-    alt="LANEIGE Lip Sleeping Mask"
+    alt="medicube Zero Pore Pad 2."
     class="product-image"
   >
 
   <div class="thumbnails">
 
     <img
-      src="medicube2.jpg"
+      src="medicube1.jpg"
       alt="medicube Zero Pore Pad 2.0 1"
       onclick="changeImage(this.src)"
     >
 
     <img
-      src="medicube3.jpg"
+      src="medicube2.jpg"
       alt="medicube Zero Pore Pad 2.0 2"
       onclick="changeImage(this.src)"
     >
 
     <img
-      src="medicube4.jpg"
+      src="medicube3.jpg"
       alt="medicube Zero Pore Pad 2.0 3"
       onclick="changeImage(this.src)"
     >
 
     <img
-      src="laneige4.jpg"
+      src="medicube4.jpg"
       alt="medicube Zero Pore Pad 2.0 44"
       onclick="changeImage(this.src)"
     >
