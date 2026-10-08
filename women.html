@@ -22,7 +22,15 @@
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 35px 20px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: #222;
+      text-decoration: none;
+      font-size: 14px;
     }
 
     h1 {
@@ -34,46 +42,58 @@
     .products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
 
     .product {
-      background: white;
+      background: #fff;
+      border: 1px solid #eee;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #eee;
     }
 
     .product img {
       width: 100%;
-      height: 260px;
+      height: 250px;
       object-fit: cover;
       display: block;
     }
 
     .info {
-      padding: 18px;
+      padding: 16px;
       text-align: center;
     }
 
     .name {
       font-size: 16px;
-      margin-bottom: 12px;
+      font-weight: bold;
+      margin-bottom: 8px;
     }
 
-    .shop {
+    .description {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .view {
       display: inline-block;
       background: #222;
-      color: white;
+      color: #fff;
       text-decoration: none;
-      padding: 10px 22px;
+      padding: 10px 20px;
       border-radius: 6px;
       font-size: 13px;
     }
 
+    .view:hover {
+      background: #444;
+    }
+
     @media (max-width: 700px) {
       .products {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -89,50 +109,187 @@
 
 <div class="container">
 
+  <a href="index.html" class="back">← Back</a>
+
   <h1>Women's Essentials</h1>
 
   <div class="products">
 
+    <!-- PRODUCT 1 -->
     <div class="product">
-      <img src="WOMEN-PRODUCT-1-IMAGE" alt="Women's Product 1">
+      <img src="WOMEN-1-IMAGE" alt="Women's Product 1">
 
       <div class="info">
         <div class="name">Women's Product 1</div>
 
-        <a href="WOMEN-PRODUCT-1-LINK"
-           target="_blank"
-           class="shop">
-          Shop Now
+        <div class="description">
+          Short description of the product goes here.
+        </div>
+
+        <a href="women-product-1.html" class="view">
+          View Product
         </a>
       </div>
     </div>
 
 
+    <!-- PRODUCT 2 -->
     <div class="product">
-      <img src="WOMEN-PRODUCT-2-IMAGE" alt="Women's Product 2">
+      <img src="WOMEN-2-IMAGE" alt="Women's Product 2">
 
       <div class="info">
         <div class="name">Women's Product 2</div>
 
-        <a href="WOMEN-PRODUCT-2-LINK"
-           target="_blank"
-           class="shop">
-          Shop Now
+        <div class="description">
+          Short description of the product goes here.
+        </div>
+
+        <a href="women-product-2.html" class="view">
+          View Product
         </a>
       </div>
     </div>
 
 
+    <!-- PRODUCT 3 -->
     <div class="product">
-      <img src="WOMEN-PRODUCT-3-IMAGE" alt="Women's Product 3">
+      <img src="WOMEN-3-IMAGE" alt="Women's Product 3">
 
       <div class="info">
         <div class="name">Women's Product 3</div>
 
-        <a href="WOMEN-PRODUCT-3-LINK"
-           target="_blank"
-           class="shop">
-          Shop Now
+        <div class="description">
+          Short description of the product goes here.
+        </div>
+
+        <a href="women-product-3.html" class="view">
+          View Product
+        </a>
+      </div>
+    </div>
+
+
+    <!-- PRODUCT 4 -->
+    <div class="product">
+      <img src="WOMEN-4-IMAGE" alt="Women's Product 4">
+
+      <div class="info">
+        <div class="name">Women's Product 4</div>
+
+        <div class="description">
+          Short description of the product goes here.
+        </div>
+
+        <a href="women-product-4.html" class="view">
+          View Product
+        </a>
+      </div>
+    </div>
+
+
+    <!-- PRODUCT 5 -->
+    <div class="product">
+      <img src="WOMEN-5-IMAGE" alt="Women's Product 5">
+
+      <div class="info">
+        <div class="name">Women's Product 5</div>
+
+        <div class="description">
+          Short description of the product goes here.
+        </div>
+
+        <a href="women-product-5.html" class="view">
+          View Product
+        </a>
+      </div>
+    </div>
+
+
+    <!-- PRODUCT 6 -->
+    <div class="product">
+      <img src="WOMEN-6-IMAGE" alt="Women's Product 6">
+
+      <div class="info">
+        <div class="name">Women's Product 6</div>
+
+        <div class="description">
+          Short description of the product goes here.
+        </div>
+
+        <a href="women-product-6.html" class="view">
+          View Product
+        </a>
+      </div>
+    </div>
+
+
+    <!-- PRODUCT 7 -->
+    <div class="product">
+      <img src="WOMEN-7-IMAGE" alt="Women's Product 7">
+
+      <div class="info">
+        <div class="name">Women's Product 7</div>
+
+        <div class="description">
+          Short description of the product goes here.
+        </div>
+
+        <a href="women-product-7.html" class="view">
+          View Product
+        </a>
+      </div>
+    </div>
+
+
+    <!-- PRODUCT 8 -->
+    <div class="product">
+      <img src="WOMEN-8-IMAGE" alt="Women's Product 8">
+
+      <div class="info">
+        <div class="name">Women's Product 8</div>
+
+        <div class="description">
+          Short description of the product goes here.
+        </div>
+
+        <a href="women-product-8.html" class="view">
+          View Product
+        </a>
+      </div>
+    </div>
+
+
+    <!-- PRODUCT 9 -->
+    <div class="product">
+      <img src="WOMEN-9-IMAGE" alt="Women's Product 9">
+
+      <div class="info">
+        <div class="name">Women's Product 9</div>
+
+        <div class="description">
+          Short description of the product goes here.
+        </div>
+
+        <a href="women-product-9.html" class="view">
+          View Product
+        </a>
+      </div>
+    </div>
+
+
+    <!-- PRODUCT 10 -->
+    <div class="product">
+      <img src="WOMEN-10-IMAGE" alt="Women's Product 10">
+
+      <div class="info">
+        <div class="name">Women's Product 10</div>
+
+        <div class="description">
+          Short description of the product goes here.
+        </div>
+
+        <a href="women-product-10.html" class="view">
+          View Product
         </a>
       </div>
     </div>
