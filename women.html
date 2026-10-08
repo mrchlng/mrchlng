@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Women's Essentials</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f3ee;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 35px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #eee;
+    }
+
+    .product img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .info {
+      padding: 18px;
+      text-align: center;
+    }
+
+    .name {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .shop {
+      display: inline-block;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .products {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Women's Essentials</h1>
+
+  <div class="products">
+
+    <div class="product">
+      <img src="WOMEN-PRODUCT-1-IMAGE" alt="Women's Product 1">
+
+      <div class="info">
+        <div class="name">Women's Product 1</div>
+
+        <a href="WOMEN-PRODUCT-1-LINK"
+           target="_blank"
+           class="shop">
+          Shop Now
+        </a>
+      </div>
+    </div>
+
+
+    <div class="product">
+      <img src="WOMEN-PRODUCT-2-IMAGE" alt="Women's Product 2">
+
+      <div class="info">
+        <div class="name">Women's Product 2</div>
+
+        <a href="WOMEN-PRODUCT-2-LINK"
+           target="_blank"
+           class="shop">
+          Shop Now
+        </a>
+      </div>
+    </div>
+
+
+    <div class="product">
+      <img src="WOMEN-PRODUCT-3-IMAGE" alt="Women's Product 3">
+
+      <div class="info">
+        <div class="name">Women's Product 3</div>
+
+        <a href="WOMEN-PRODUCT-3-LINK"
+           target="_blank"
+           class="shop">
+          Shop Now
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
