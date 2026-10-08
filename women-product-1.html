@@ -34,44 +34,50 @@
     }
 
     .product {
-      background: white;
-      border-radius: 14px;
-      padding: 25px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-    }
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
 
     .product-image {
   width: 100%;
-  height: 450px;
-  object-fit: cover;
-  border-radius: 10px;
+  height: 480px;
+  object-fit: contain;
+  background: #f7f7f7;
+  border-radius: 12px;
   display: block;
 }
 
 .gallery {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .thumbnails {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-top: 12px;
+  gap: 12px;
 }
 
 .thumbnails img {
   width: 100%;
   height: 90px;
   object-fit: cover;
-  border-radius: 7px;
+  border-radius: 8px;
   cursor: pointer;
   border: 2px solid transparent;
+  transition: 0.2s;
 }
 
 .thumbnails img:hover {
   border-color: #222;
+  opacity: 0.85;
 }
     
 
@@ -82,43 +88,73 @@
     }
 
     .details h1 {
-      font-size: 28px;
-      margin-bottom: 18px;
-    }
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
 
     .description {
-      color: #666;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  font-size: 15px;
+}
 
     .shop {
-      display: inline-block;
-      background: #222;
-      color: white;
-      text-decoration: none;
-      text-align: center;
-      padding: 13px 25px;
-      border-radius: 6px;
-      font-size: 14px;
-    }
+  display: inline-block;
+  background: #222;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.2s;
+}
 
-    .shop:hover {
-      background: #444;
-    }
+.shop:hover {
+  background: #444;
+  transform: translateY(-2px);
+}
 
   
 
     @media (max-width: 700px) {
+  .container {
+    padding: 20px 14px;
+  }
+
   .product {
     grid-template-columns: 1fr;
+    padding: 18px;
+    gap: 25px;
+    border-radius: 14px;
   }
 
   .product-image {
-    height: 350px;
+    height: 330px;
+  }
+
+  .details h1 {
+    font-size: 26px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .shop {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .thumbnails img {
+    height: 75px;
   }
 }
-  </style>
+</style>
 </head>
 
 <body>
