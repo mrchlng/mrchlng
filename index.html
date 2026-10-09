@@ -28,7 +28,7 @@
       color: var(--text);
     }
 
-    /* HEADER BANNER */
+    /* HEADER */
 
     .hero-header {
       position: relative;
@@ -76,7 +76,6 @@
       color: var(--blue);
       font-family: Georgia, serif;
       font-size: clamp(25px, 4vw, 43px);
-      font-weight: bold;
       line-height: 1.15;
     }
 
@@ -104,7 +103,7 @@
       cursor: pointer;
     }
 
-    /* SEARCH BAR */
+    /* SEARCH */
 
     .search-section {
       padding: 20px 5% 10px;
@@ -178,7 +177,7 @@
       border-radius: 10px;
     }
 
-    /* MAIN CONTENT */
+    /* MAIN */
 
     main {
       min-height: 400px;
@@ -191,7 +190,7 @@
     .shop-categories {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 0 40px;
+      padding-bottom: 40px;
     }
 
     .section-heading {
@@ -199,9 +198,13 @@
       margin-bottom: 24px;
     }
 
-    .section-heading h2 {
+    .section-heading h2,
+    .women-heading h2 {
       color: var(--blue);
       font-family: Georgia, serif;
+    }
+
+    .section-heading h2 {
       font-size: 28px;
       margin-bottom: 8px;
     }
@@ -234,7 +237,7 @@
       text-decoration: none;
       color: #fff;
       aspect-ratio: 3 / 4;
-      box-shadow: 0 3px 12px rgba(7, 84, 184, 0.10);
+      box-shadow: 0 3px 12px rgba(7,84,184,.10);
     }
 
     .category-card img {
@@ -242,10 +245,11 @@
       height: 100%;
       display: block;
       object-fit: cover;
-      transition: transform 0.35s ease;
+      transition: transform .35s ease;
     }
 
-    .category-card:hover img {
+    .category-card:hover img,
+    .women-product:hover img {
       transform: scale(1.05);
     }
 
@@ -256,7 +260,7 @@
       background: linear-gradient(
         to bottom,
         transparent,
-        rgba(5, 32, 68, 0.78)
+        rgba(5,32,68,.78)
       );
     }
 
@@ -283,6 +287,92 @@
       padding: 7px 12px;
       font-size: 11px;
       font-weight: bold;
+    }
+
+    /* WOMEN'S FAVORITES */
+
+    .women-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 0 45px;
+    }
+
+    .women-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .women-heading h2 {
+      font-size: 27px;
+    }
+
+    .women-heading p {
+      margin-top: 7px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .view-all {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .women-products {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .women-product {
+      min-width: 0;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .women-product-image {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      border-radius: 10px;
+      background: var(--light-blue);
+    }
+
+    .women-product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .3s ease;
+    }
+
+    .product-label {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      padding: 5px 7px;
+      border-radius: 4px;
+      background: var(--yellow);
+      color: var(--text);
+      font-size: 9px;
+      font-weight: bold;
+    }
+
+    .women-product h3 {
+      margin-top: 11px;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .women-product p {
+      margin-top: 5px;
+      color: #64748b;
+      font-size: 12px;
     }
 
     /* MOBILE */
@@ -374,6 +464,41 @@
         padding: 6px 5px;
         font-size: 9px;
       }
+
+      .women-section {
+        padding: 5px 0 35px;
+      }
+
+      .women-heading {
+        margin-bottom: 18px;
+      }
+
+      .women-heading h2 {
+        font-size: 22px;
+      }
+
+      .women-heading p {
+        font-size: 11px;
+      }
+
+      .women-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+      }
+
+      .women-product h3 {
+        font-size: 13px;
+      }
+
+      .women-product p {
+        font-size: 12px;
+      }
+
+      .product-label {
+        top: 6px;
+        left: 6px;
+        font-size: 9px;
+      }
     }
   </style>
 </head>
@@ -406,12 +531,14 @@
   </section>
 
   <nav class="categories" aria-label="Product navigation">
-    <a href="#women" class="category-link active">Women</a>
+    <a href="#womenProducts" class="category-link active">Women</a>
     <a href="#men" class="category-link">Men</a>
     <a href="#fragrance" class="category-link">Fragrance</a>
   </nav>
 
   <main id="mainContent">
+
+    <!-- SHOP BY CATEGORY -->
 
     <section class="shop-categories" id="shopByCategory">
 
@@ -423,7 +550,7 @@
 
       <div class="category-grid">
 
-        <a href="#women" class="category-card" id="women">
+        <a href="#womenProducts" class="category-card">
           <img
             src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80"
             alt="Women's fashion and outfit inspiration"
@@ -435,7 +562,7 @@
           </div>
         </a>
 
-        <a href="#men" class="category-card" id="men">
+        <a href="#men" class="category-card">
           <img
             src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=600&q=80"
             alt="Men's fashion and modern style"
@@ -447,7 +574,7 @@
           </div>
         </a>
 
-        <a href="#fragrance" class="category-card" id="fragrance">
+        <a href="#fragrance" class="category-card">
           <img
             src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80"
             alt="Perfume and fragrance collection"
@@ -457,6 +584,88 @@
             <h3>Fragrance</h3>
             <span>EXPLORE</span>
           </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- WOMEN'S FAVORITES -->
+
+    <section class="women-section" id="womenProducts">
+
+      <div class="women-heading">
+        <div>
+          <h2>Women's Favorites</h2>
+          <p>Everyday essentials worth discovering.</p>
+        </div>
+        <a href="#womenProducts" class="view-all">View All →</a>
+      </div>
+
+      <div class="women-products">
+
+        <a href="#product-1" class="women-product">
+          <div class="women-product-image">
+            <img
+              src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=500&q=80"
+              alt="Women's chic fashion outfit"
+              loading="lazy"
+            >
+            <span class="product-label">STYLE PICK</span>
+          </div>
+          <h3>Everyday Style</h3>
+          <p>Fashion Favorites</p>
+        </a>
+
+        <a href="#product-2" class="women-product">
+          <div class="women-product-image">
+            <img
+              src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=500&q=80"
+              alt="Women's clothing and fashion"
+              loading="lazy"
+            >
+            <span class="product-label">TRENDING</span>
+          </div>
+          <h3>Chic Wardrobe</h3>
+          <p>Modern Essentials</p>
+        </a>
+
+        <a href="#product-3" class="women-product">
+          <div class="women-product-image">
+            <img
+              src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=500&q=80"
+              alt="Elegant perfume bottle"
+              loading="lazy"
+            >
+            <span class="product-label">BEAUTY PICK</span>
+          </div>
+          <h3>Signature Scent</h3>
+          <p>Beauty &amp; Fragrance</p>
+        </a>
+
+        <a href="#product-4" class="women-product">
+          <div class="women-product-image">
+            <img
+              src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=500&q=80"
+              alt="Beauty and skincare products"
+              loading="lazy"
+            >
+            <span class="product-label">BEAUTY</span>
+          </div>
+          <h3>Beauty Essentials</h3>
+          <p>Daily Beauty Finds</p>
+        </a>
+
+        <a href="#product-5" class="women-product">
+          <div class="women-product-image">
+            <img
+              src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80"
+              alt="Women's handbag accessory"
+              loading="lazy"
+            >
+            <span class="product-label">MUST-HAVE</span>
+          </div>
+          <h3>Classic Accessories</h3>
+          <p>Finishing Touches</p>
         </a>
 
       </div>
