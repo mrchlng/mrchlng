@@ -151,4 +151,96 @@ h1{font-size:34px}
 
 <a class="category" href="#fragrance">
 <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80" alt="Perfume and fragrance" loading="lazy">
-<div class="category-info
+<div class="category-info"><h3>Fragrance</h3><span>EXPLORE NOW →</span></div>
+</a>
+
+<a class="category" href="#home-living">
+<img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=700&q=80" alt="Home decor and living room" loading="lazy">
+<div class="category-info"><h3>Home & Living</h3><span>EXPLORE NOW →</span></div>
+</a>
+</div>
+</section>
+
+<section class="section featured" id="women">
+<div class="heading">
+<h2>Featured Favorites</h2>
+<p>Beauty and style picks to get you started.</p>
+</div>
+
+<div class="products" id="products">
+<article class="product" data-search="mighty patch original hero cosmetics pimple patches acne skincare beauty">
+<img src="images/mighty-patch.jpg" alt="Hero Cosmetics Mighty Patch Original" loading="lazy">
+<div class="info">
+<span class="tag">Skincare</span>
+<h3>Mighty Patch Original</h3>
+<a class="product-link" href="https://link.amazon/B03cdtDvB" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a>
+</div>
+</article>
+
+<article class="product" data-search="elf e.l.f. power grip primer makeup primer hydrating beauty">
+<img src="images/elf-power-grip-primer.jpg" alt="e.l.f. Power Grip Primer" loading="lazy">
+<div class="info">
+<span class="tag">Makeup</span>
+<h3>e.l.f. Power Grip Primer</h3>
+<a class="product-link" href="https://link.amazon/B05iJbzJp" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a>
+</div>
+</article>
+
+<article class="product" data-search="honey tinted lip balm black cherry lipstick lip care makeup">
+<img src="images/honey-tinted-lip-balm.jpg" alt="Honey tinted lip balm" loading="lazy">
+<div class="info">
+<span class="tag">Lip Care</span>
+<h3>Honey Tinted Lip Balm</h3>
+<a class="product-link" href="https://link.amazon/B0cJIfgaZ" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a>
+</div>
+</article>
+
+<article class="product" data-search="nyx professional makeup fat oil lip drip missed call sheer pink lip oil gloss">
+<img src="images/nyx-fat-oil-lip-drip.jpg" alt="NYX Fat Oil Lip Drip" loading="lazy">
+<div class="info">
+<span class="tag">Makeup</span>
+<h3>NYX Fat Oil Lip Drip</h3>
+<a class="product-link" href="https://link.amazon/B02mXJw1E" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a>
+</div>
+</article>
+
+<article class="product" data-search="maybelline instant age rewind eraser dark circles concealer shade 100 makeup">
+<img src="images/maybelline-concealer.jpg" alt="Maybelline Instant Age Rewind Concealer" loading="lazy">
+<div class="info">
+<span class="tag">Makeup</span>
+<h3>Maybelline Instant Age Rewind Concealer</h3>
+<a class="product-link" href="https://link.amazon/B01Kkk2DH" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a>
+</div>
+</article>
+</div>
+</section>
+</main>
+
+<footer>
+<strong>Discover Your Style</strong>
+<p>Fashion, beauty, fragrance, and home finds for your everyday life.</p>
+<p>As an Amazon Associate, I earn from qualifying purchases.</p>
+</footer>
+
+<script>
+const form=document.getElementById('searchForm');
+const input=document.getElementById('searchInput');
+const products=[...document.querySelectorAll('.product')];
+
+form.addEventListener('submit',function(e){
+e.preventDefault();
+const q=input.value.trim().toLowerCase();
+let found=0;
+
+products.forEach(p=>{
+const match=!q||(p.innerText+' '+(p.dataset.search||'')).toLowerCase().includes(q);
+p.style.display=match?'':'none';
+if(match)found++;
+});
+
+if(q&&found===0) alert('No products found. Try another search.');
+document.getElementById('products').scrollIntoView({behavior:'smooth',block:'start'});
+});
+</script>
+</body>
+</html>
