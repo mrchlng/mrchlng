@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Women's Essentials</title>
+  <title>Women's Essentials | Discover Your Style</title>
 
   <style>
     * {
@@ -15,171 +16,234 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f7f3ee;
-      color: #292521;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
+      background: #F2F7FC;
+      color: #24476B;
     }
 
     /* HEADER */
 
     header {
-      background: #fff;
-      padding: 20px;
+      background: #24476B;
+      color: #FFFFFF;
       text-align: center;
-      border-bottom: 1px solid #eee5dc;
+      padding: 35px 20px;
     }
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 13px;
-      color: #77685d;
-    }
-
-    /* INTRODUCTION */
-
-    .intro {
-      text-align: center;
-      padding: 45px 20px 30px;
-    }
-
-    .intro h1 {
+    header h1 {
       font-size: 32px;
-      font-weight: 500;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .intro p {
-      color: #766a60;
+    header p {
       font-size: 14px;
       line-height: 1.7;
     }
 
-    /* CATEGORY GRID */
+    /* NAVIGATION */
 
-    .categories {
-      max-width: 1100px;
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #F4CF55;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    /* MAIN CONTAINER */
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
       margin: auto;
-      padding: 10px 25px 55px;
+      padding: 35px 25px;
     }
 
-    .category-grid {
+    /* CATEGORY NAVIGATION */
+
+    .category-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .category-nav a {
+      padding: 12px 28px;
+      background: #FFFFFF;
+      color: #24476B;
+      border: 1px solid #D5E1ED;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .category-nav a:hover {
+      background: #24476B;
+      color: #FFFFFF;
+    }
+
+    /* PRODUCT SECTIONS */
+
+    .product-section {
+      margin-bottom: 45px;
+      scroll-margin-top: 20px;
+    }
+
+    .section-heading {
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid #F4CF55;
+    }
+
+    .section-heading h2 {
+      font-size: 25px;
+      margin-bottom: 6px;
+    }
+
+    .section-heading p {
+      font-size: 13px;
+      color: #526A80;
+    }
+
+    /* PRODUCT GRID */
+
+    .products {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
     }
 
-    .category-card {
-      background: #fff;
-      display: block;
+    .product-card {
+      min-width: 0;
       overflow: hidden;
-    }
-
-    .category-image {
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-      background: #eee6df;
-    }
-
-    .category-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
+      background: #FFFFFF;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(36, 71, 107, 0.08);
       transition: transform 0.3s ease;
     }
 
-    .category-card:hover img {
-      transform: scale(1.03);
+    .product-card:hover {
+      transform: translateY(-4px);
     }
 
-    .category-info {
-      text-align: center;
-      padding: 20px 12px 24px;
+    .product-image {
+      width: 100%;
+      height: 230px;
+      background: #FFFFFF;
+      overflow: hidden;
     }
 
-    .category-info h2 {
-      font-size: 20px;
-      font-weight: 500;
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .product-info {
+      padding: 15px;
+      border-top: 2px solid #F4CF55;
+    }
+
+    .product-info h3 {
+      font-size: 15px;
       margin-bottom: 8px;
     }
 
-    .category-info p {
-      color: #766a60;
+    .product-info p {
+      color: #526A80;
       font-size: 13px;
-      margin-bottom: 15px;
-    }
-
-    .explore {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      border-bottom: 1px solid #8a6d58;
-      padding-bottom: 4px;
+      line-height: 1.5;
     }
 
     /* FOOTER */
 
     footer {
+      margin-top: 20px;
+      padding: 22px 15px;
+      background: #24476B;
+      color: #FFFFFF;
       text-align: center;
-      padding: 25px 15px;
       font-size: 12px;
-      color: #766a60;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 900px) {
+      .container {
+        padding: 25px 18px;
+      }
+
+      .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .product-image {
+        height: 200px;
+      }
     }
 
     /* MOBILE */
 
-    @media (max-width: 700px) {
-      .logo {
+    @media (max-width: 600px) {
+      header {
+        padding: 28px 15px;
+      }
+
+      header h1 {
+        font-size: 26px;
+      }
+
+      header p {
+        font-size: 13px;
+      }
+
+      .container {
+        padding: 22px 10px;
+      }
+
+      .category-nav {
+        gap: 8px;
+        margin-bottom: 30px;
+      }
+
+      .category-nav a {
+        padding: 10px 16px;
+        font-size: 12px;
+      }
+
+      .section-heading h2 {
         font-size: 21px;
       }
 
-      .intro {
-        padding: 35px 18px 25px;
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
       }
 
-      .intro h1 {
-        font-size: 27px;
+      .product-image {
+        height: 180px;
       }
 
-      .categories {
-        padding: 10px 15px 35px;
+      .product-info {
+        padding: 12px 10px;
       }
 
-      .category-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+      .product-info h3 {
+        font-size: 13px;
       }
 
-      .category-image {
-        height: 280px;
-      }
-
-      .category-info {
-        padding: 16px 12px 20px;
-      }
-    }
-
-    @media (min-width: 701px) and (max-width: 1000px) {
-      .category-image {
-        height: 240px;
-      }
-
-      .category-grid {
-        gap: 15px;
+      .product-info p {
+        font-size: 12px;
       }
     }
   </style>
@@ -190,93 +254,196 @@
   <!-- HEADER -->
 
   <header>
-    <a href="index.html">
-      <div class="logo">WOMEN'S ESSENTIALS</div>
-    </a>
+    <h1>Women's Essentials</h1>
+
+    <p>
+      Discover your everyday beauty essentials,
+      from face products to eye and lip favorites.
+    </p>
 
     <a href="index.html" class="back-link">
-      ← Back to Home
+      ← BACK TO HOME
     </a>
   </header>
 
-  <!-- INTRODUCTION -->
+  <main class="container">
 
-  <section class="intro">
-    <h1>Discover Your Beauty</h1>
+    <!-- CATEGORY NAVIGATION -->
 
-    <p>
-      Explore your everyday beauty essentials,
-      from skincare to eye and lip favorites.
-    </p>
-  </section>
+    <nav class="category-nav">
+      <a href="#face">FACE</a>
+      <a href="#eyes">EYES</a>
+      <a href="#lips">LIPS</a>
+    </nav>
 
-  <!-- CATEGORIES -->
+    <!-- FACE -->
 
-  <section class="categories">
-    <div class="category-grid">
+    <section class="product-section" id="face">
 
-      <!-- FACE -->
+      <div class="section-heading">
+        <h2>Face</h2>
+        <p>Everyday essentials for your face.</p>
+      </div>
 
-      <a href="face.html" class="category-card">
-        <div class="category-image">
-          <img
-            src="images/face.jpg"
-            alt="Face skincare essentials"
-            loading="lazy"
-          >
-        </div>
+      <div class="products">
 
-        <div class="category-info">
-          <h2>Face</h2>
-          <p>Skincare and face essentials.</p>
-          <span class="explore">EXPLORE FACE</span>
-        </div>
-      </a>
+        <article class="product-card">
+          <div class="product-image">
+            <img src="face-product-1.png" alt="Face Product 1">
+          </div>
+          <div class="product-info">
+            <h3>Face Product 1</h3>
+            <p>Add your product description here.</p>
+          </div>
+        </article>
 
-      <!-- EYES -->
+        <article class="product-card">
+          <div class="product-image">
+            <img src="face-product-2.png" alt="Face Product 2">
+          </div>
+          <div class="product-info">
+            <h3>Face Product 2</h3>
+            <p>Add your product description here.</p>
+          </div>
+        </article>
 
-      <a href="eyes.html" class="category-card">
-        <div class="category-image">
-          <img
-            src="images/eyes.jpg"
-            alt="Eye beauty essentials"
-            loading="lazy"
-          >
-        </div>
+        <article class="product-card">
+          <div class="product-image">
+            <img src="face-product-3.png" alt="Face Product 3">
+          </div>
+          <div class="product-info">
+            <h3>Face Product 3</h3>
+            <p>Add your product description here.</p>
+          </div>
+        </article>
 
-        <div class="category-info">
-          <h2>Eyes</h2>
-          <p>Discover your eye-care and beauty favorites.</p>
-          <span class="explore">EXPLORE EYES</span>
-        </div>
-      </a>
+        <article class="product-card">
+          <div class="product-image">
+            <img src="face-product-4.png" alt="Face Product 4">
+          </div>
+          <div class="product-info">
+            <h3>Face Product 4</h3>
+            <p>Add your product description here.</p>
+          </div>
+        </article>
 
-      <!-- LIPS -->
+      </div>
+    </section>
 
-      <a href="lips.html" class="category-card">
-        <div class="category-image">
-          <img
-            src="images/lips.jpg"
-            alt="Lip care and lip color essentials"
-            loading="lazy"
-          >
-        </div>
+    <!-- EYES -->
 
-        <div class="category-info">
-          <h2>Lips</h2>
-          <p>Lip care, hydration, and everyday color.</p>
-          <span class="explore">EXPLORE LIPS</span>
-        </div>
-      </a>
+    <section class="product-section" id="eyes">
 
-    </div>
-  </section>
+      <div class="section-heading">
+        <h2>Eyes</h2>
+        <p>Make your eyes stand out.</p>
+      </div>
 
-  <!-- FOOTER -->
+      <div class="products">
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="eyes-product-1.png" alt="Eye Product 1">
+          </div>
+          <div class="product-info">
+            <h3>Eye Product 1</h3>
+            <p>Add your product description here.</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="eyes-product-2.png" alt="Eye Product 2">
+          </div>
+          <div class="product-info">
+            <h3>Eye Product 2</h3>
+            <p>Add your product description here.</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="eyes-product-3.png" alt="Eye Product 3">
+          </div>
+          <div class="product-info">
+            <h3>Eye Product 3</h3>
+            <p>Add your product description here.</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="eyes-product-4.png" alt="Eye Product 4">
+          </div>
+          <div class="product-info">
+            <h3>Eye Product 4</h3>
+            <p>Add your product description here.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- LIPS -->
+
+    <section class="product-section" id="lips">
+
+      <div class="section-heading">
+        <h2>Lips</h2>
+        <p>Find your everyday lip favorites.</p>
+      </div>
+
+      <div class="products">
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="lips-product-1.png" alt="Lip Product 1">
+          </div>
+          <div class="product-info">
+            <h3>Lip Product 1</h3>
+            <p>Add your product description here.</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="lips-product-2.png" alt="Lip Product 2">
+          </div>
+          <div class="product-info">
+            <h3>Lip Product 2</h3>
+            <p>Add your product description here.</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="lips-product-3.png" alt="Lip Product 3">
+          </div>
+          <div class="product-info">
+            <h3>Lip Product 3</h3>
+            <p>Add your product description here.</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="lips-product-4.png" alt="Lip Product 4">
+          </div>
+          <div class="product-info">
+            <h3>Lip Product 4</h3>
+            <p>Add your product description here.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    <p>&copy; 2026 Discover Your Style. All rights reserved.</p>
+    © 2026 Discover Your Style
   </footer>
 
 </body>
 </html>
+```
