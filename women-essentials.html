@@ -309,35 +309,76 @@
 
     </div>
   </div>
-
+  
 <script>
-  function shuffleProducts() {
-    const productsContainer = document.querySelector(".products");
+  const STORAGE_KEY = "womensEssentialsOrder";
 
-    if (!productsContainer) return;
+  function shuffleProducts() {
+    const container = document.querySelector(".products");
+    if (!container) return;
 
     const products = Array.from(
-      productsContainer.querySelectorAll(".product")
+      container.querySelectorAll(".product")
     );
 
     for (let i = products.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-
-      [products[i], products[j]] =
-        [products[j], products[i]];
+      [products[i], products[j]] = [products[j], products[i]];
     }
 
-    products.forEach(function (product) {
-      productsContainer.appendChild(product);
-    });
+    products.forEach(product => container.appendChild(product));
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    shuffleProducts();
+  function restoreProducts() {
+    const container = document.querySelector(".products");
+    if (!container) return;
+
+    const savedOrder = sessionStorage.getItem(STORAGE_KEY);
+    if (!savedOrder) return;
+
+    const products = Array.from(
+      container.querySelectorAll(".product")
+    );
+
+    const productMap = new Map(
+      products.map(product => [
+        product.querySelector(".view").getAttribute("href"),
+        product
+      ])
+    );
+
+    try {
+      const order = JSON.parse(savedOrder);
+
+      order.forEach(href => {
+        const product = productMap.get(href);
+        if (product) container.appendChild(product);
+      });
+    } catch (error) {
+      sessionStorage.removeItem(STORAGE_KEY);
+      shuffleProducts();
+    }
+  }
+
+  document.querySelectorAll(".product .view").forEach(link => {
+    link.addEventListener("click", function () {
+      const container = document.querySelector(".products");
+
+      const order = Array.from(
+        container.querySelectorAll(".product .view")
+      ).map(button => button.getAttribute("href"));
+
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(order));
+    });
   });
 
-  window.addEventListener("pageshow", function (event) {
-    if (event.persisted) {
+  document.addEventListener("DOMContentLoaded", function () {
+    const navigation = performance.getEntriesByType("navigation")[0];
+    const isBackForward = navigation && navigation.type === "back_forward";
+
+    if (isBackForward && sessionStorage.getItem(STORAGE_KEY)) {
+      restoreProducts();
+    } else {
       shuffleProducts();
     }
   });
