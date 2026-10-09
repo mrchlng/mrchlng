@@ -57,11 +57,12 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
+      align-items: stretch;
     }
 
     .category {
       min-width: 0;
-      background: white;
+      background: #fff;
       border-radius: 12px;
       overflow: hidden;
       text-decoration: none;
@@ -75,15 +76,17 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
-.category img {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  object-position: center;
-  background: #fff;
-  display: block;
-  padding: 3px;
-}
+    /* CATEGORY IMAGE - DESKTOP */
+
+    .category img {
+      display: block;
+      width: 100%;
+      height: 240px;
+      object-fit: contain;
+      object-position: center;
+      padding: 5px;
+      background: #fff;
+    }
 
     .category-name {
       text-align: center;
@@ -91,6 +94,7 @@
       font-size: 16px;
       line-height: 1.4;
       font-weight: bold;
+      overflow-wrap: anywhere;
     }
 
     /* FEATURED PRODUCTS */
@@ -114,12 +118,13 @@
     }
 
     .product img {
+      display: block;
       width: 100%;
       height: 240px;
       object-fit: contain;
-      background: white;
-      display: block;
+      object-position: center;
       padding: 10px;
+      background: white;
     }
 
     .product-info {
@@ -185,14 +190,15 @@
         border-radius: 8px;
       }
 
+      /* CATEGORY IMAGE - MOBILE */
+
       .category img {
         width: 100%;
-        height: 115px;
+        height: 150px;
         object-fit: contain;
         object-position: center;
-        padding: 2px;
+        padding: 3px;
         background: #fff;
-        display: block;
       }
 
       .category-name {
@@ -244,6 +250,10 @@
         gap: 6px;
       }
 
+      .category img {
+        height: 120px;
+      }
+
       .category-name {
         font-size: 10px;
       }
@@ -265,270 +275,239 @@
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <!-- HERO -->
+    <!-- HERO -->
 
-  <section class="hero">
-    <h1>Discover Your Style</h1>
+    <section class="hero">
+      <h1>Discover Your Style</h1>
 
-    <p>
-      Curated essentials, beauty finds &amp; fragrances worth discovering.
-    </p>
-  </section>
+      <p>
+        Curated essentials, beauty finds &amp; fragrances worth discovering.
+      </p>
+    </section>
 
+    <!-- CATEGORIES -->
 
-  <!-- CATEGORIES -->
+    <section>
+      <h2 class="section-title">Categories</h2>
 
-  <section>
+      <div class="categories">
 
-    <h2 class="section-title">Categories</h2>
+        <!-- WOMEN -->
 
-    <div class="categories">
-
-      <!-- WOMEN -->
-
-      <a href="women-essentials.html" class="category">
-
-        <img
-          src="womens-essentials.png"
-          alt="Women's Essentials"
-        >
-
-        <div class="category-name">
-          Women's Essentials
-        </div>
-
-      </a>
-
-
-      <!-- MEN -->
-
-      <a href="men-essentials.html" class="category">
-
-        <img
-          src="mens-essentials.png"
-          alt="Men's Essentials"
-        >
-
-        <div class="category-name">
-          Men's Essentials
-        </div>
-
-      </a>
-
-
-      <!-- FRAGRANCE -->
-
-      <a href="fragrance.html" class="category">
-
-        <img
-          src="fragrance.png"
-          alt="Fragrance"
-        >
-
-        <div class="category-name">
-          Fragrance
-        </div>
-
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- FEATURED PRODUCTS -->
-
-  <section class="featured">
-
-    <h2 class="section-title">Featured Products</h2>
-
-    <div class="products" id="featured-products">
-
-
-      <!-- PRODUCT 1 -->
-
-      <div class="product">
-
-        <img
-          src="PRODUCT-1-IMAGE-URL"
-          alt="Product Name 1"
-          loading="lazy"
-        >
-
-        <div class="product-info">
-
-          <div class="product-name">
-            Product Name 1
-          </div>
-
-          <a
-            href="PRODUCT-1-AFFILIATE-LINK"
-            class="shop"
-            target="_blank"
-            rel="noopener noreferrer"
+        <a href="women-essentials.html" class="category">
+          <img
+            src="womens-essentials.png"
+            alt="Women's Essentials"
           >
-            Shop Now
-          </a>
 
+          <div class="category-name">
+            Women's Essentials
+          </div>
+        </a>
+
+        <!-- MEN -->
+
+        <a href="men-essentials.html" class="category">
+          <img
+            src="mens-essentials.png"
+            alt="Men's Essentials"
+          >
+
+          <div class="category-name">
+            Men's Essentials
+          </div>
+        </a>
+
+        <!-- FRAGRANCE -->
+
+        <a href="fragrance.html" class="category">
+          <img
+            src="fragrance.png"
+            alt="Fragrance"
+          >
+
+          <div class="category-name">
+            Fragrance
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+
+    <section class="featured">
+      <h2 class="section-title">Featured Products</h2>
+
+      <div class="products" id="featured-products">
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product">
+          <img
+            src="PRODUCT-1-IMAGE-URL"
+            alt="Product Name 1"
+            loading="lazy"
+          >
+
+          <div class="product-info">
+            <div class="product-name">
+              Product Name 1
+            </div>
+
+            <a
+              href="PRODUCT-1-AFFILIATE-LINK"
+              class="shop"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Shop Now
+            </a>
+          </div>
+        </div>
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product">
+          <img
+            src="PRODUCT-2-IMAGE-URL"
+            alt="Product Name 2"
+            loading="lazy"
+          >
+
+          <div class="product-info">
+            <div class="product-name">
+              Product Name 2
+            </div>
+
+            <a
+              href="PRODUCT-2-AFFILIATE-LINK"
+              class="shop"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Shop Now
+            </a>
+          </div>
+        </div>
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product">
+          <img
+            src="PRODUCT-3-IMAGE-URL"
+            alt="Product Name 3"
+            loading="lazy"
+          >
+
+          <div class="product-info">
+            <div class="product-name">
+              Product Name 3
+            </div>
+
+            <a
+              href="PRODUCT-3-AFFILIATE-LINK"
+              class="shop"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Shop Now
+            </a>
+          </div>
         </div>
 
       </div>
+    </section>
 
+  </div>
 
-      <!-- PRODUCT 2 -->
+  <!-- FEATURED PRODUCT SHUFFLE -->
 
-      <div class="product">
+  <script>
+    (function () {
+      const container = document.getElementById("featured-products");
 
-        <img
-          src="PRODUCT-2-IMAGE-URL"
-          alt="Product Name 2"
-          loading="lazy"
-        >
+      if (!container) return;
 
-        <div class="product-info">
+      const storageKey = "featuredProductsOrder";
+      const products = Array.from(container.children);
 
-          <div class="product-name">
-            Product Name 2
-          </div>
+      if (products.length < 2) return;
 
-          <a
-            href="PRODUCT-2-AFFILIATE-LINK"
-            class="shop"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Shop Now
-          </a>
+      function shuffle(array) {
+        const result = array.slice();
 
-        </div>
+        for (let i = result.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
 
-      </div>
-
-
-      <!-- PRODUCT 3 -->
-
-      <div class="product">
-
-        <img
-          src="PRODUCT-3-IMAGE-URL"
-          alt="Product Name 3"
-          loading="lazy"
-        >
-
-        <div class="product-info">
-
-          <div class="product-name">
-            Product Name 3
-          </div>
-
-          <a
-            href="PRODUCT-3-AFFILIATE-LINK"
-            class="shop"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Shop Now
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-</div>
-
-
-<!-- FEATURED PRODUCT SHUFFLE -->
-
-<script>
-  (function () {
-    const container = document.getElementById("featured-products");
-
-    if (!container) return;
-
-    const storageKey = "featuredProductsOrder";
-    const products = Array.from(container.children);
-
-    if (products.length < 2) return;
-
-    function shuffle(array) {
-      const result = array.slice();
-
-      for (let i = result.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-
-        [result[i], result[j]] = [result[j], result[i]];
-      }
-
-      return result;
-    }
-
-    function saveOrder(order) {
-      try {
-        sessionStorage.setItem(storageKey, JSON.stringify(order));
-      } catch (error) {
-        // Continue even if session storage is unavailable.
-      }
-    }
-
-    function getSavedOrder() {
-      try {
-        const saved = JSON.parse(sessionStorage.getItem(storageKey));
-
-        if (
-          Array.isArray(saved) &&
-          saved.length === products.length &&
-          saved.every(
-            index =>
-              Number.isInteger(index) &&
-              index >= 0 &&
-              index < products.length
-          ) &&
-          new Set(saved).size === products.length
-        ) {
-          return saved;
+          [result[i], result[j]] = [result[j], result[i]];
         }
-      } catch (error) {
-        // Use a new random order if saved data is unavailable.
+
+        return result;
       }
 
-      return null;
-    }
-
-    function displayOrder(order) {
-      order.forEach(index => {
-        container.appendChild(products[index]);
-      });
-    }
-
-    const navigation = performance.getEntriesByType("navigation")[0];
-
-    const isBackNavigation =
-      navigation && navigation.type === "back_forward";
-
-    if (isBackNavigation) {
-      const savedOrder = getSavedOrder();
-
-      if (savedOrder) {
-        displayOrder(savedOrder);
-        return;
+      function saveOrder(order) {
+        try {
+          sessionStorage.setItem(storageKey, JSON.stringify(order));
+        } catch (error) {
+          // Continue if session storage is unavailable.
+        }
       }
-    }
 
-    // Shuffle on a fresh visit or page refresh.
-    const shuffledOrder = shuffle(
-      products.map((_, index) => index)
-    );
+      function getSavedOrder() {
+        try {
+          const saved = JSON.parse(sessionStorage.getItem(storageKey));
 
-    displayOrder(shuffledOrder);
-    saveOrder(shuffledOrder);
-  })();
-</script>
+          if (
+            Array.isArray(saved) &&
+            saved.length === products.length &&
+            saved.every(
+              index =>
+                Number.isInteger(index) &&
+                index >= 0 &&
+                index < products.length
+            ) &&
+            new Set(saved).size === products.length
+          ) {
+            return saved;
+          }
+        } catch (error) {
+          // Use a new random order if saved data is unavailable.
+        }
+
+        return null;
+      }
+
+      function displayOrder(order) {
+        order.forEach(index => {
+          container.appendChild(products[index]);
+        });
+      }
+
+      const navigation = performance.getEntriesByType("navigation")[0];
+
+      const isBackNavigation =
+        navigation && navigation.type === "back_forward";
+
+      if (isBackNavigation) {
+        const savedOrder = getSavedOrder();
+
+        if (savedOrder) {
+          displayOrder(savedOrder);
+          return;
+        }
+      }
+
+      const shuffledOrder = shuffle(
+        products.map((_, index) => index)
+      );
+
+      displayOrder(shuffledOrder);
+      saveOrder(shuffledOrder);
+    })();
+  </script>
 
 </body>
 </html>
