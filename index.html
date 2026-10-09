@@ -19,18 +19,116 @@
       color: #24476B;
     }
 
-    /* HEADER GIF */
+    /* HEADER WITH GIF */
 
     .header-banner {
+      position: relative;
       width: 100%;
+      min-height: 340px;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #24476B;
+    }
+
+    .header-background {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    /* DARK OVERLAY */
+
+    .header-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: rgba(15, 35, 55, 0.35);
+    }
+
+    /* SEARCH BAR */
+
+    .header-search {
+      position: absolute;
+      top: 18px;
+      right: 25px;
+      z-index: 3;
+      width: 280px;
+      max-width: calc(100% - 30px);
+    }
+
+    .header-search form {
+      display: flex;
+      align-items: center;
+      background: #FFFFFF;
+      border-radius: 25px;
+      padding: 3px 12px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .header-search input {
+      flex: 1;
+      width: 100%;
+      min-width: 0;
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 10px 4px;
+      font-size: 13px;
+      color: #24476B;
+    }
+
+    .header-search input::placeholder {
+      color: #8292A3;
+    }
+
+    .header-search button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: transparent;
+      color: #24476B;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .header-search svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    /* HEADER TEXT */
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 65px 20px 30px;
+      color: #FFFFFF;
+    }
+
+    .header-content h1 {
+      font-size: 38px;
+      font-weight: bold;
       margin-bottom: 15px;
     }
 
-    .header-banner img {
-      display: block;
-      width: 100%;
-      height: auto;
+    .header-content p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.8;
     }
 
     /* MAIN CONTAINER */
@@ -40,28 +138,6 @@
       max-width: 1200px;
       margin: auto;
       padding: 35px 25px;
-    }
-
-    /* INTRODUCTION */
-
-    .intro {
-      text-align: center;
-      padding: 35px 15px 40px;
-    }
-
-    .intro h1 {
-      font-size: 38px;
-      font-weight: bold;
-      color: #24476B;
-      margin-bottom: 15px;
-    }
-
-    .intro p {
-      max-width: 650px;
-      margin: auto;
-      font-size: 16px;
-      line-height: 1.8;
-      color: #526A80;
     }
 
     /* CATEGORY SECTION */
@@ -184,6 +260,10 @@
     /* TABLET */
 
     @media (max-width: 900px) {
+      .header-banner {
+        min-height: 300px;
+      }
+
       .container {
         padding: 25px 20px;
       }
@@ -217,21 +297,32 @@
     /* MOBILE */
 
     @media (max-width: 600px) {
+      .header-banner {
+        min-height: 260px;
+      }
+
+      .header-search {
+        top: 12px;
+        right: 12px;
+        width: 230px;
+      }
+
+      .header-content {
+        padding: 65px 15px 25px;
+      }
+
+      .header-content h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .header-content p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
       .container {
         padding: 15px 10px;
-      }
-
-      .intro {
-        padding: 30px 8px;
-      }
-
-      .intro h1 {
-        font-size: 30px;
-      }
-
-      .intro p {
-        font-size: 14px;
-        line-height: 1.7;
       }
 
       .categories {
@@ -291,24 +382,48 @@
 
 <body>
 
-  <!-- HEADER GIF -->
+  <!-- HEADER GIF WITH SEARCH AND TEXT -->
 
-  <div class="header-banner">
-    <img src="header.gif" alt="Discover Your Style">
-  </div>
+  <header class="header-banner">
 
-  <main class="container">
+    <img
+      src="header.gif"
+      alt=""
+      class="header-background"
+    >
 
-    <!-- INTRODUCTION -->
+    <div class="header-overlay"></div>
 
-    <section class="intro">
+    <div class="header-search">
+      <form action="index.html" method="get">
+        <input
+          type="search"
+          name="q"
+          placeholder="Search products..."
+          aria-label="Search products"
+        >
+
+        <button type="submit" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5"></circle>
+            <path d="M15.5 15.5L21 21"></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <div class="header-content">
       <h1>Discover Your Style</h1>
 
       <p>
         Explore beauty, skincare, everyday essentials,
         and fragrances curated to complement your personal style.
       </p>
-    </section>
+    </div>
+
+  </header>
+
+  <main class="container">
 
     <!-- CATEGORIES -->
 
@@ -318,7 +433,10 @@
 
       <a href="womens-essentials.html" class="category-card">
         <div class="category-image">
-          <img src="womens-essentials.png" alt="Women's Essentials">
+          <img
+            src="womens-essentials.png"
+            alt="Women's Essentials"
+          >
         </div>
 
         <div class="category-info">
@@ -337,7 +455,10 @@
 
       <a href="mens-essentials.html" class="category-card">
         <div class="category-image">
-          <img src="mens-essentials.png" alt="Men's Essentials">
+          <img
+            src="mens-essentials.png"
+            alt="Men's Essentials"
+          >
         </div>
 
         <div class="category-info">
@@ -356,7 +477,10 @@
 
       <a href="fragrance.html" class="category-card">
         <div class="category-image">
-          <img src="fragrance.png" alt="Fragrance">
+          <img
+            src="fragrance.png"
+            alt="Fragrance"
+          >
         </div>
 
         <div class="category-info">
