@@ -1,1173 +1,147 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Discover Your Style | Fashion, Beauty & Living</title>
-  <meta name="description" content="Discover fashion, fragrance, and home and living favorites. Find your next favorite with Discover Your Style.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --blue: #173b70;
-      --light-blue: #eaf2fb;
-      --yellow: #ffd84d;
-      --white: #ffffff;
-      --text: #202b3b;
-      --muted: #687386;
-      --border: #e6eaf0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: #ffffff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-    }
-
-    .top-strip {
-      background: var(--blue);
-      color: white;
-      text-align: center;
-      padding: 8px 12px;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-
-    .header {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-inner {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-    }
-
-    .logo {
-      color: var(--blue);
-      font-size: 23px;
-      font-weight: 800;
-      line-height: 1.15;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      display: block;
-      color: #bd9411;
-      font-size: 10px;
-      letter-spacing: 3px;
-      margin-top: 5px;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-    }
-
-    .nav a {
-      font-size: 13px;
-      font-weight: 700;
-      transition: color .2s;
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      color: #b28a00;
-    }
-
-    .menu-btn {
-      display: none;
-      background: var(--blue);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 22px;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-    }
-
-    .search-wrap {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 24px 14px;
-    }
-
-    .search-box {
-      display: flex;
-      max-width: 430px;
-      margin-left: auto;
-      border: 1px solid #d9e0eb;
-      border-radius: 25px;
-      overflow: hidden;
-      background: #f8fafc;
-    }
-
-    .search-box input {
-      flex: 1;
-      min-width: 0;
-      padding: 11px 16px;
-      border: none;
-      outline: none;
-      background: transparent;
-      font-size: 13px;
-    }
-
-    .search-box button {
-      background: var(--yellow);
-      color: var(--blue);
-      border: none;
-      padding: 0 17px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .hero {
-      max-width: 1200px;
-      margin: 25px auto 50px;
-      padding: 0 24px;
-    }
-
-    .hero-inner {
-      min-height: 390px;
-      background:
-        linear-gradient(90deg, rgba(12,35,69,.88), rgba(12,35,69,.25)),
-        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=85")
-        center 35% / cover;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      padding: 55px;
-      color: white;
-      overflow: hidden;
-    }
-
-    .hero-content {
-      max-width: 490px;
-    }
-
-    .eyebrow {
-      color: var(--yellow);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .hero h1 {
-      font-size: clamp(34px, 5vw, 56px);
-      line-height: 1.1;
-      margin-bottom: 18px;
-    }
-
-    .hero p {
-      font-size: 15px;
-      color: #f0f3f8;
-      max-width: 420px;
-      margin-bottom: 25px;
-    }
-
-    .primary-btn {
-      display: inline-block;
-      background: var(--yellow);
-      color: var(--blue);
-      padding: 13px 23px;
-      border-radius: 5px;
-      font-weight: 800;
-      font-size: 13px;
-      transition: transform .2s;
-    }
-
-    .primary-btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px 55px;
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 15px;
-      margin-bottom: 22px;
-    }
-
-    .section-heading h2 {
-      font-size: 27px;
-      color: var(--blue);
-      line-height: 1.25;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 5px;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .category-card {
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
-      height: 260px;
-      background: var(--light-blue);
-    }
-
-    .category-card img {
-      height: 100%;
-      object-fit: cover;
-      transition: transform .4s;
-    }
-
-    .category-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .category-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(transparent 30%, rgba(8,25,50,.78));
-    }
-
-    .category-info {
-      position: absolute;
-      z-index: 1;
-      bottom: 18px;
-      left: 18px;
-      color: white;
-    }
-
-    .category-info h3 {
-      font-size: 21px;
-      margin-bottom: 4px;
-    }
-
-    .category-info span {
-      color: var(--yellow);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .product-section {
-      background: #f8fafd;
-      padding-top: 42px;
-      padding-bottom: 45px;
-      margin-bottom: 45px;
-    }
-
-    .product-section .section-heading {
-      margin-bottom: 23px;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .product-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      overflow: hidden;
-      min-width: 0;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .product-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 7px 22px rgba(20,45,80,.08);
-    }
-
-    .product-image {
-      aspect-ratio: 4 / 5;
-      background: #eef2f7;
-      overflow: hidden;
-    }
-
-    .product-image img {
-      height: 100%;
-      object-fit: cover;
-      transition: transform .3s;
-    }
-
-    .product-card:hover .product-image img {
-      transform: scale(1.04);
-    }
-
-    .product-info {
-      padding: 13px;
-    }
-
-    .product-tag {
-      display: inline-block;
-      color: var(--blue);
-      background: #edf3fb;
-      padding: 3px 7px;
-      font-size: 9px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-      border-radius: 3px;
-      margin-bottom: 7px;
-    }
-
-    .product-info h3 {
-      font-size: 13px;
-      line-height: 1.45;
-      min-height: 38px;
-      margin-bottom: 7px;
-    }
-
-    .product-description {
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.5;
-      margin-bottom: 12px;
-    }
-
-    .product-link {
-      display: block;
-      text-align: center;
-      background: var(--blue);
-      color: white;
-      padding: 9px 6px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .product-link:hover {
-      background: #245493;
-    }
-
-    .no-results {
-      display: none;
-      text-align: center;
-      padding: 30px 10px;
-      color: var(--muted);
-      grid-column: 1 / -1;
-    }
-
-    .about {
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 10px 24px 60px;
-      text-align: center;
-    }
-
-    .about h2 {
-      color: var(--blue);
-      font-size: 26px;
-      margin-bottom: 12px;
-    }
-
-    .about p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .footer {
-      background: var(--blue);
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    .footer h2 {
-      font-size: 21px;
-      margin-bottom: 8px;
-    }
-
-    .footer p {
-      font-size: 12px;
-      color: #dbe5f2;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin: 15px 0;
-    }
-
-    .footer-links a {
-      font-size: 12px;
-      color: white;
-    }
-
-    .copyright {
-      border-top: 1px solid rgba(255,255,255,.2);
-      margin-top: 20px;
-      padding-top: 17px;
-      font-size: 11px !important;
-    }
-
-    @media (max-width: 900px) {
-      .header-inner {
-        gap: 12px;
-        padding: 13px 18px;
-      }
-
-      .logo {
-        font-size: 20px;
-      }
-
-      .nav {
-        gap: 13px;
-      }
-
-      .nav a {
-        font-size: 12px;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .category-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 600px) {
-      html {
-        scroll-padding-top: 75px;
-      }
-
-      .top-strip {
-        font-size: 10px;
-        padding: 7px 8px;
-      }
-
-      .header-inner {
-        padding: 12px 15px;
-      }
-
-      .logo {
-        font-size: 19px;
-      }
-
-      .logo span {
-        font-size: 9px;
-      }
-
-      .menu-btn {
-        display: block;
-        flex-shrink: 0;
-      }
-
-      .nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        padding: 8px 18px 16px;
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 8px 15px rgba(0,0,0,.06);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-      }
-
-      .nav.open {
-        display: flex;
-      }
-
-      .nav a {
-        padding: 11px 4px;
-        border-bottom: 1px solid #f0f2f5;
-        font-size: 14px;
-      }
-
-      .search-wrap {
-        padding: 0 15px 12px;
-      }
-
-      .search-box {
-        max-width: none;
-      }
-
-      .search-box input {
-        padding: 10px 13px;
-      }
-
-      .hero {
-        margin: 15px auto 35px;
-        padding: 0 15px;
-      }
-
-      .hero-inner {
-        min-height: 340px;
-        padding: 28px 23px;
-        background-position: center;
-        border-radius: 9px;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .hero p {
-        font-size: 13px;
-      }
-
-      .section {
-        padding: 0 15px 38px;
-      }
-
-      .section-heading {
-        margin-bottom: 17px;
-      }
-
-      .section-heading h2 {
-        font-size: 23px;
-      }
-
-      .section-heading p {
-        font-size: 12px;
-      }
-
-      .category-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 11px;
-      }
-
-      .category-card {
-        height: 190px;
-      }
-
-      .category-info {
-        left: 12px;
-        bottom: 12px;
-      }
-
-      .category-info h3 {
-        font-size: 17px;
-      }
-
-      .product-section {
-        padding-top: 30px;
-        padding-bottom: 30px;
-        margin-bottom: 32px;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .product-info {
-        padding: 10px;
-      }
-
-      .product-info h3 {
-        font-size: 12px;
-        min-height: 35px;
-      }
-
-      .product-description {
-        font-size: 10px;
-      }
-
-      .product-link {
-        font-size: 10px;
-        padding: 9px 4px;
-      }
-
-      .about {
-        padding: 0 20px 40px;
-      }
-
-      .about h2 {
-        font-size: 23px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discover Your Style</title>
+<meta name="description" content="Discover fashion, beauty, and fragrance favorites.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#173b70;--yellow:#ffd84d;--white:#fff;--pale:#f4f8fd;--text:#253247}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--white)}
+a{text-decoration:none;color:inherit}
+.top{background:var(--blue);color:white;text-align:center;padding:8px 12px;font-size:11px;letter-spacing:1.5px}
+header{background:#fff;border-bottom:1px solid #e6ebf2}
+.header-inner{max-width:1120px;margin:auto;padding:17px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-size:22px;font-weight:800;color:var(--blue);white-space:nowrap}
+.logo span{display:block;font-size:9px;letter-spacing:2.5px;color:#a88300;margin-top:4px}
+nav{display:flex;gap:22px;align-items:center}
+nav a{font-size:13px;font-weight:700;color:var(--blue)}
+nav a:hover{color:#a88300}
+.search{display:flex;max-width:1120px;margin:0 auto;padding:0 22px 15px}
+.search form{margin-left:auto;display:flex;width:300px;border:1px solid #dce3ed;border-radius:22px;overflow:hidden;background:#f8fafc}
+.search input{min-width:0;flex:1;border:0;outline:0;padding:10px 14px;background:transparent}
+.search button{border:0;background:var(--yellow);color:var(--blue);font-weight:700;padding:0 15px;cursor:pointer}
+.hero{max-width:1120px;margin:25px auto 38px;padding:0 22px}
+.hero-inner{min-height:340px;border-radius:12px;overflow:hidden;background:linear-gradient(90deg,rgba(15,43,82,.9),rgba(15,43,82,.3)),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=85') center 38%/cover;display:flex;align-items:center;padding:48px;color:white}
+.hero-content{max-width:480px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;color:var(--yellow);text-transform:uppercase;margin-bottom:12px}
+h1{font-size:clamp(34px,5vw,54px);line-height:1.08;margin-bottom:15px}
+.hero p{font-size:14px;line-height:1.7;color:#f2f5fa;margin-bottom:23px;max-width:410px}
+.btn{display:inline-block;background:var(--yellow);color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.5px;padding:12px 20px;border-radius:4px}
+.section{max-width:1120px;margin:0 auto;padding:0 22px 42px}
+.heading{text-align:center;margin-bottom:20px}
+.heading h2{font-size:25px;color:var(--blue)}
+.heading p{font-size:13px;color:#687386;margin-top:5px}
+.categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.category{height:210px;position:relative;overflow:hidden;border-radius:9px;background:#eaf2fb}
+.category img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.category:hover img{transform:scale(1.04)}
+.category:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(10,30,60,.8))}
+.category-info{position:absolute;z-index:1;left:17px;bottom:15px;color:white}
+.category-info h3{font-size:21px;margin-bottom:3px}
+.category-info span{font-size:10px;letter-spacing:1px;font-weight:700;color:var(--yellow)}
+.featured{background:var(--pale);padding-top:30px;padding-bottom:32px}
+.products{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.product{background:white;border:1px solid #e5eaf1;border-radius:8px;overflow:hidden;min-width:0}
+.product img{width:100%;height:165px;object-fit:contain;background:white;padding:8px}
+.info{padding:11px}
+.tag{display:inline-block;background:#edf3fb;color:var(--blue);font-size:9px;font-weight:800;padding:3px 6px;margin-bottom:6px;border-radius:3px}
+.info h3{font-size:12px;line-height:1.45;min-height:35px;margin-bottom:7px}
+.info p{font-size:10px;color:#687386;line-height:1.5;min-height:30px;margin-bottom:10px}
+.product-link{display:block;text-align:center;background:var(--blue);color:white;border-radius:4px;padding:9px 4px;font-size:10px;font-weight:700}
+.product-link:hover{background:#245493}
+footer{background:var(--blue);color:white;text-align:center;padding:24px 15px}
+footer strong{font-size:18px}
+footer p{font-size:11px;color:#dbe5f2;margin-top:6px}
+@media(max-width:760px){
+ .header-inner{padding:13px 15px;flex-wrap:wrap}.logo{font-size:19px}nav{gap:13px}nav a{font-size:11px}
+ .search{padding:0 15px 12px}.search form{width:100%}
+ .hero{padding:0 15px;margin:15px auto 30px}.hero-inner{min-height:300px;padding:28px 22px;background-position:center}
+ .section{padding-left:15px;padding-right:15px;padding-bottom:32px}.category{height:175px}.categories{gap:10px}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.product img{height:170px}
+}
+@media(max-width:480px){
+ .top{font-size:9px;letter-spacing:1px}
+ .header-inner{gap:10px}.logo{font-size:18px}
+ nav{width:100%;justify-content:space-between;gap:6px}
+ nav a{font-size:11px}
+ .hero-inner{min-height:290px;padding:25px 19px}
+ h1{font-size:34px}.hero p{font-size:12px}
+ .heading h2{font-size:22px}
+ .category{height:150px}.category-info{left:10px;bottom:10px}.category-info h3{font-size:17px}.category-info span{font-size:9px}
+ .product img{height:145px}.info{padding:9px}.info h3{font-size:11px}
+}
+</style>
 </head>
-
 <body>
-
-  <div class="top-strip">
-    YOUR STYLE, YOUR HOME, YOUR EVERYDAY FAVORITES
+<div class="top">YOUR STYLE, YOUR EVERYDAY FAVORITES</div>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#home">Discover Your Style<span>STYLE YOUR EVERYDAY</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#women">Women</a><a href="#men">Men</a><a href="#fragrance">Fragrance</a>
+    </nav>
   </div>
-
-  <header class="header">
-    <div class="header-inner">
-      <a href="#home" class="logo">
-        Discover Your Style
-        <span>STYLE YOUR EVERYDAY</span>
-      </a>
-
-      <button class="menu-btn" id="menuBtn"
-        aria-label="Toggle navigation" aria-expanded="false">
-        ☰
-      </button>
-
-      <nav class="nav" id="mainNav">
-        <a href="#home" class="active">Home</a>
-        <a href="#women">Women</a>
-        <a href="#men">Men</a>
-        <a href="#fragrance">Fragrance</a>
-        <a href="#home-living">Home &amp; Living</a>
-      </nav>
-    </div>
-
-    <div class="search-wrap">
-      <form class="search-box" id="searchForm">
-        <input
-          type="search"
-          id="searchInput"
-          placeholder="Search products..."
-          aria-label="Search products">
-        <button type="submit">Search</button>
-      </form>
-    </div>
-  </header>
-
-  <main>
-    <!-- HOME HERO -->
-    <section class="hero" id="home">
-      <div class="hero-inner">
-        <div class="hero-content">
-          <div class="eyebrow">Welcome to Discover Your Style</div>
-          <h1>Find Your Next Favorite.</h1>
-          <p>
-            Discover stylish fashion, beautiful fragrances, and
-            thoughtful finds for your home and everyday life.
-          </p>
-          <a href="#categories" class="primary-btn">EXPLORE COLLECTIONS</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CATEGORIES -->
-    <section class="section" id="categories">
-      <div class="section-heading">
-        <div>
-          <h2>Explore Categories</h2>
-          <p>Find something you'll love.</p>
-        </div>
-      </div>
-
-      <div class="category-grid">
-        <a href="#women" class="category-card">
-          <img
-            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80"
-            alt="Women's fashion"
-            loading="lazy">
-          <div class="category-info">
-            <h3>Women</h3>
-            <span>EXPLORE NOW →</span>
-          </div>
-        </a>
-
-        <a href="#men" class="category-card">
-          <img
-            src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=700&q=80"
-            alt="Men's style"
-            loading="lazy">
-          <div class="category-info">
-            <h3>Men</h3>
-            <span>EXPLORE NOW →</span>
-          </div>
-        </a>
-
-        <a href="#fragrance" class="category-card">
-          <img
-            src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80"
-            alt="Perfume and fragrance"
-            loading="lazy">
-          <div class="category-info">
-            <h3>Fragrance</h3>
-            <span>EXPLORE NOW →</span>
-          </div>
-        </a>
-
-        <a href="#home-living" class="category-card">
-          <img
-            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=700&q=80"
-            alt="Home decor and living"
-            loading="lazy">
-          <div class="category-info">
-            <h3>Home &amp; Living</h3>
-            <span>EXPLORE NOW →</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- WOMEN -->
-    <section class="section product-section" id="women">
-      <div class="section-heading">
-        <div>
-          <h2>Women's Favorites</h2>
-          <p>Style picks for your everyday wardrobe.</p>
-        </div>
-      </div>
-
-      <div class="product-grid">
-        <article class="product-card" data-search="women dress floral outfit fashion">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=500&q=80" alt="Women's floral outfit" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Women's Style</span>
-            <h3>Everyday Floral Outfit</h3>
-            <p class="product-description">A lovely look for everyday plans.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="women handbag purse fashion accessories">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80" alt="Women's handbag" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Accessories</span>
-            <h3>Classic Everyday Handbag</h3>
-            <p class="product-description">A versatile accessory for your outfits.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="women shoes heels footwear fashion">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=500&q=80" alt="Women's shoes" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Footwear</span>
-            <h3>Chic Everyday Shoes</h3>
-            <p class="product-description">A stylish finishing touch to your look.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="women sunglasses accessories fashion">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=500&q=80" alt="Fashion sunglasses" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Accessories</span>
-            <h3>Classic Sunglasses</h3>
-            <p class="product-description">An easy accessory for sunny days.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="women jewelry gold earrings accessories">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=500&q=80" alt="Women's jewelry" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Jewelry</span>
-            <h3>Minimal Jewelry Set</h3>
-            <p class="product-description">Simple details to elevate your style.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- MEN -->
-    <section class="section product-section" id="men">
-      <div class="section-heading">
-        <div>
-          <h2>Men's Favorites</h2>
-          <p>Everyday essentials for a confident look.</p>
-        </div>
-      </div>
-
-      <div class="product-grid">
-        <article class="product-card" data-search="men shirt casual clothing fashion">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=500&q=80" alt="Men's casual shirt" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Men's Style</span>
-            <h3>Casual Everyday Shirt</h3>
-            <p class="product-description">An easy piece for everyday outfits.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="men sneakers shoes footwear fashion">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=500&q=80" alt="Casual sneakers" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Footwear</span>
-            <h3>Everyday Sneakers</h3>
-            <p class="product-description">A versatile pick for casual days.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="men watch accessories wristwatch">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Classic wristwatch" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Accessories</span>
-            <h3>Classic Everyday Watch</h3>
-            <p class="product-description">A timeless addition to your look.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="men backpack bag travel accessories">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=500&q=80" alt="Everyday backpack" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Bags</span>
-            <h3>Everyday Backpack</h3>
-            <p class="product-description">A practical companion for busy days.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="men wallet leather accessories">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=500&q=80" alt="Men's wallet" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Accessories</span>
-            <h3>Classic Everyday Wallet</h3>
-            <p class="product-description">A simple essential for daily use.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- FRAGRANCE -->
-    <section class="section product-section" id="fragrance">
-      <div class="section-heading">
-        <div>
-          <h2>Fragrance Finds</h2>
-          <p>Discover scents for different moods and moments.</p>
-        </div>
-      </div>
-
-      <div class="product-grid">
-        <article class="product-card" data-search="perfume fragrance floral feminine scent">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=500&q=80" alt="Elegant perfume bottle" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Fragrance</span>
-            <h3>Floral Perfume</h3>
-            <p class="product-description">A floral-inspired scent for your collection.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="perfume fragrance fresh clean scent">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=500&q=80" alt="Perfume bottle on a surface" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Fragrance</span>
-            <h3>Fresh Everyday Fragrance</h3>
-            <p class="product-description">A fresh scent to explore for daily wear.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="luxury perfume fragrance evening scent">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=500&q=80" alt="Luxury fragrance bottle" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Fragrance</span>
-            <h3>Elegant Evening Perfume</h3>
-            <p class="product-description">An elegant fragrance option for evenings.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="cologne men fragrance woody scent">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=500&q=80" alt="Fragrance bottle collection" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Fragrance</span>
-            <h3>Woody Cologne</h3>
-            <p class="product-description">Explore a warm, woody fragrance style.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="perfume gift set fragrance collection">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=500&q=80" alt="Perfume gift idea" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Gift Ideas</span>
-            <h3>Fragrance Gift Pick</h3>
-            <p class="product-description">A fragrance-inspired gift idea to consider.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- HOME & LIVING -->
-    <section class="section product-section" id="home-living">
-      <div class="section-heading">
-        <div>
-          <h2>Home &amp; Living</h2>
-          <p>Thoughtful finds to refresh your space.</p>
-        </div>
-      </div>
-
-      <div class="product-grid">
-        <article class="product-card" data-search="home decor vase living room decoration">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=500&q=80" alt="Decorative home accessories" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Home Decor</span>
-            <h3>Decorative Home Accent</h3>
-            <p class="product-description">A simple way to refresh your space.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="home bedding bedroom pillow soft linens">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=500&q=80" alt="Cozy bedroom bedding" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Bedroom</span>
-            <h3>Cozy Bedroom Finds</h3>
-            <p class="product-description">Ideas for a more inviting bedroom.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="kitchen accessories home kitchen organization">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80" alt="Modern kitchen interior" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Kitchen</span>
-            <h3>Kitchen Essentials</h3>
-            <p class="product-description">Useful ideas for your everyday kitchen.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="home storage organizer baskets organization">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=500&q=80" alt="Organized home interior" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Organization</span>
-            <h3>Home Organization Finds</h3>
-            <p class="product-description">Ideas to help keep your space tidy.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-search="home lighting table lamp decor">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=500&q=80" alt="Decorative table lamp" loading="lazy">
-          </div>
-          <div class="product-info">
-            <span class="product-tag">Lighting</span>
-            <h3>Decorative Table Lamp</h3>
-            <p class="product-description">A lighting accent for a cozy atmosphere.</p>
-            <a href="#" class="product-link affiliate-link">View Product →</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about">
-      <h2>Discover Your Style</h2>
-      <p>
-        Your destination for fashion inspiration, fragrance finds,
-        and home and living ideas. Explore our collections and discover
-        products that fit your personal style.
-      </p>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <h2>Discover Your Style</h2>
-    <p>Fashion, fragrance, and everyday living inspiration.</p>
-
-    <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#women">Women</a>
-      <a href="#men">Men</a>
-      <a href="#fragrance">Fragrance</a>
-      <a href="#home-living">Home &amp; Living</a>
-    </div>
-
-    <p class="copyright">
-      © <span id="year"></span> Discover Your Style. All rights reserved.
-    </p>
-  </footer>
-
-  <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const mainNav = document.getElementById("mainNav");
-    const searchForm = document.getElementById("searchForm");
-    const searchInput = document.getElementById("searchInput");
-    const productCards = document.querySelectorAll(".product-card");
-    const navLinks = document.querySelectorAll(".nav a");
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-    // Mobile navigation
-    menuBtn.addEventListener("click", function () {
-      const isOpen = mainNav.classList.toggle("open");
-      menuBtn.setAttribute("aria-expanded", isOpen);
-      menuBtn.textContent = isOpen ? "×" : "☰";
-    });
-
-    mainNav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        mainNav.classList.remove("open");
-        menuBtn.setAttribute("aria-expanded", "false");
-        menuBtn.textContent = "☰";
-
-        navLinks.forEach(function (item) {
-          item.classList.remove("active");
-        });
-
-        link.classList.add("active");
-      });
-    });
-
-    // Search across all sample products
-    searchForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const query = searchInput.value.trim().toLowerCase();
-      let matches = 0;
-
-      productCards.forEach(function (card) {
-        const searchableText =
-          (card.innerText + " " + (card.dataset.search || ""))
-          .toLowerCase();
-
-        const match = !query || searchableText.includes(query);
-        card.style.display = match ? "" : "none";
-
-        if (match) matches++;
-      });
-
-      document.querySelectorAll(".product-section").forEach(function (section) {
-        const visibleCards = Array.from(
-          section.querySelectorAll(".product-card")
-        ).filter(function (card) {
-          return card.style.display !== "none";
-        });
-
-        section.style.display =
-          query && visibleCards.length === 0 ? "none" : "";
-
-        let message = section.querySelector(".no-results");
-
-        if (!message) {
-          message = document.createElement("p");
-          message.className = "no-results";
-          message.textContent = "No products found in this category.";
-          section.querySelector(".product-grid").appendChild(message);
-        }
-
-        message.style.display =
-          query && visibleCards.length === 0 ? "block" : "none";
-      });
-
-      if (query) {
-        const firstVisible = Array.from(productCards).find(function (card) {
-          return card.style.display !== "none";
-        });
-
-        if (firstVisible) {
-          firstVisible.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
-        } else {
-          document.getElementById("categories").scrollIntoView({
-            behavior: "smooth"
-          });
-          alert("No products found. Try another search.");
-        }
-      } else {
-        document.querySelectorAll(".product-section").forEach(function (section) {
-          section.style.display = "";
-        });
-        document.getElementById("categories").scrollIntoView({
-          behavior: "smooth"
-        });
-      }
-    });
-
-    // Sample links: replace # with your real affiliate URLs.
-    document.querySelectorAll(".affiliate-link").forEach(function (link) {
-      link.addEventListener("click", function (event) {
-        if (link.getAttribute("href") === "#") {
-          event.preventDefault();
-          alert("Sample product only. Replace this link with your affiliate product URL.");
-        }
-      });
-    });
-  </script>
-
+  <div class="search">
+    <form id="searchForm"><input id="searchInput" type="search" placeholder="Search featured products..." aria-label="Search products"><button type="submit">Search</button></form>
+  </div>
+</header>
+<main>
+<section class="hero" id="home"><div class="hero-inner"><div class="hero-content">
+  <div class="eyebrow">Welcome to Discover Your Style</div>
+  <h1>Find Your Next Favorite.</h1>
+  <p>Explore fashion, beauty, and fragrance finds picked to inspire your everyday style.</p>
+  <a class="btn" href="#categories">EXPLORE NOW</a>
+</div></div></section>
+<section class="section" id="categories">
+  <div class="heading"><h2>Shop by Category</h2><p>Discover a few favorites for every style.</p></div>
+  <div class="categories">
+    <a class="category" href="#women"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80" alt="Women's fashion" loading="lazy"><div class="category-info"><h3>Women</h3><span>EXPLORE NOW →</span></div></a>
+    <a class="category" href="#men"><img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=700&q=80" alt="Men's style" loading="lazy"><div class="category-info"><h3>Men</h3><span>EXPLORE NOW →</span></div></a>
+    <a class="category" href="#fragrance"><img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80" alt="Perfume and fragrance" loading="lazy"><div class="category-info"><h3>Fragrance</h3><span>EXPLORE NOW →</span></div></a>
+  </div>
+</section>
+<section class="section featured" id="women">
+  <div class="heading"><h2>Featured Favorites</h2><p>Beauty and style picks to get you started.</p></div>
+  <div class="products" id="products">
+    <article class="product" data-search="mighty patch original hero cosmetics pimple patches acne skincare beauty">
+      <img src="images/mighty-patch.jpg" alt="Hero Cosmetics Mighty Patch Original" loading="lazy">
+      <div class="info"><span class="tag">Skincare</span><h3>Mighty Patch Original</h3><p>A simple addition to your skincare routine.</p><a class="product-link" href="https://link.amazon/B03cdtDvB" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a></div>
+    </article>
+    <article class="product" data-search="elf e.l.f. power grip primer makeup primer hydrating beauty">
+      <img src="images/elf-power-grip-primer.jpg" alt="e.l.f. Power Grip Primer" loading="lazy">
+      <div class="info"><span class="tag">Makeup</span><h3>e.l.f. Power Grip Primer</h3><p>Prep your makeup routine with this primer.</p><a class="product-link" href="https://link.amazon/B05iJbzJp" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a></div>
+    </article>
+    <article class="product" data-search="honey tinted lip balm black cherry lipstick lip care makeup">
+      <img src="images/honey-tinted-lip-balm.jpg" alt="Honey tinted lip balm" loading="lazy">
+      <div class="info"><span class="tag">Lip Care</span><h3>Honey Tinted Lip Balm</h3><p>A hint of tint for your everyday look.</p><a class="product-link" href="https://link.amazon/B0cJIfgaZ" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a></div>
+    </article>
+    <article class="product" data-search="nyx professional makeup fat oil lip drip missed call sheer pink lip oil gloss">
+      <img src="images/nyx-fat-oil-lip-drip.jpg" alt="NYX Fat Oil Lip Drip" loading="lazy">
+      <div class="info"><span class="tag">Makeup</span><h3>NYX Fat Oil Lip Drip</h3><p>A glossy lip look with a sheer tint.</p><a class="product-link" href="https://link.amazon/B02mXJw1E" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a></div>
+    </article>
+    <article class="product" data-search="maybelline instant age rewind eraser dark circles concealer shade 100 makeup">
+      <img src="images/maybelline-concealer.jpg" alt="Maybelline Instant Age Rewind Concealer" loading="lazy">
+      <div class="info"><span class="tag">Makeup</span><h3>Maybelline Instant Age Rewind Concealer</h3><p>An easy everyday concealer pick.</p><a class="product-link" href="https://link.amazon/B01Kkk2DH" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a></div>
+    </article>
+  </div>
+</section>
+</main>
+<footer><strong>Discover Your Style</strong><p>Fashion, beauty, and fragrance finds for your everyday life.</p><p>As an Amazon Associate, I earn from qualifying purchases.</p></footer>
+<script>
+const form=document.getElementById('searchForm');
+const input=document.getElementById('searchInput');
+const products=[...document.querySelectorAll('.product')];
+form.addEventListener('submit',function(e){
+ e.preventDefault();
+ const q=input.value.trim().toLowerCase();
+ let found=0;
+ products.forEach(p=>{const match=!q||(p.innerText+' '+(p.dataset.search||'')).toLowerCase().includes(q);p.style.display=match?'':'none';if(match)found++;});
+ if(q&&found===0) alert('No products found. Try another search.');
+ document.getElementById('products').scrollIntoView({behavior:'smooth',block:'start'});
+});
+</script>
 </body>
 </html>
