@@ -282,90 +282,95 @@
       }
     }
 
-    /* MOBILE */
+    
+/* MOBILE */
 
-    @media (max-width: 600px) {
-      .header-banner {
-        min-height: 260px;
-      }
+@media (max-width: 600px) {
+  .header-banner {
+    height: 260px;
+    min-height: 260px;
+    overflow: hidden;
+  }
 
-      /* MOBILE HEADER GIF CROP */
-      .header-background {
-        object-fit: cover;
-        object-position: center 45%;
-      }
+  /* MOBILE HEADER GIF CROP */
+  .header-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
 
-      .header-search {
-        top: 12px;
-        right: 12px;
-        width: 230px;
-      }
+  .header-search {
+    top: 12px;
+    right: 12px;
+    width: 230px;
+  }
 
-      .header-content {
-        padding: 65px 15px 25px;
-      }
+  .header-content {
+    padding: 65px 15px 25px;
+  }
 
-      .header-content h1 {
-        font-size: 28px;
-        margin-bottom: 10px;
-      }
+  .header-content h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
 
-      .header-content p {
-        font-size: 13px;
-        line-height: 1.6;
-      }
+  .header-content p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
 
-      .container {
-        padding: 15px 10px;
-      }
+  .container {
+    padding: 15px 10px;
+  }
 
-      .categories {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
-        margin-top: 10px;
-      }
+  .categories {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 10px;
+  }
 
-      .category-card {
-        border-radius: 8px;
-      }
+  .category-card {
+    border-radius: 8px;
+  }
 
-      .category-image {
-        height: 120px;
-      }
+  .category-image {
+    height: 120px;
+  }
 
-      .category-info {
-        padding: 12px 5px;
-        border-top-width: 2px;
-      }
+  .category-info {
+    padding: 12px 5px;
+    border-top-width: 2px;
+  }
 
-      .category-info h2 {
-        font-size: 12px;
-        line-height: 1.4;
-        margin-bottom: 6px;
-        overflow-wrap: anywhere;
-      }
+  .category-info h2 {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    overflow-wrap: anywhere;
+  }
 
-      .category-link {
-        width: calc(100% - 4px);
-        padding: 8px 2px;
-        font-size: 10px;
-        letter-spacing: 0;
-        text-align: center;
-      }
+  .category-link {
+    width: calc(100% - 4px);
+    padding: 8px 2px;
+    font-size: 10px;
+    letter-spacing: 0;
+    text-align: center;
+  }
 
-      .featured {
-        margin-top: 35px;
-        padding: 28px 12px;
-      }
+  .featured {
+    margin-top: 35px;
+    padding: 28px 12px;
+  }
 
-      .featured h2 {
-        font-size: 24px;
-      }
+  .featured h2 {
+    font-size: 24px;
+  }
 
-      .featured p {
-        font-size: 13px;
-      }
-    }
+  .featured p {
+    font-size: 13px;
+  }
+}
   </style>
 </head>
 
