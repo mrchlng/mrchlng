@@ -312,12 +312,12 @@
 
 <script>
   function shuffleProducts() {
-    const container = document.querySelector(".products");
+    const productsContainer = document.querySelector(".products");
 
-    if (!container) return;
+    if (!productsContainer) return;
 
     const products = Array.from(
-      container.querySelectorAll(".product")
+      productsContainer.querySelectorAll(".product")
     );
 
     for (let i = products.length - 1; i > 0; i--) {
@@ -328,7 +328,7 @@
     }
 
     products.forEach(function (product) {
-      container.appendChild(product);
+      productsContainer.appendChild(product);
     });
   }
 
@@ -342,7 +342,6 @@
     }
   });
 </script>
-
 
 </body>
 </html>
