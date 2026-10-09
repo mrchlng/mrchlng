@@ -41,11 +41,16 @@
 
     .products {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
+      align-items: stretch;
     }
 
     .product {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      height: 100%;
       background: #fff;
       border: 1px solid #eee;
       border-radius: 12px;
@@ -53,22 +58,28 @@
     }
 
     .product img {
-  width: 100%;
-  height: 250px;
-  object-fit: contain;
-  display: block;
-  background: #fff;
-}
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      background: #fff;
+    }
 
     .info {
       padding: 16px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .name {
       font-size: 16px;
       font-weight: bold;
+      line-height: 1.4;
       margin-bottom: 8px;
+      min-height: 45px;
     }
 
     .description {
@@ -76,10 +87,13 @@
       color: #666;
       line-height: 1.5;
       margin-bottom: 15px;
+      flex: 1;
     }
 
     .view {
       display: inline-block;
+      align-self: center;
+      margin-top: auto;
       background: #222;
       color: #fff;
       text-decoration: none;
@@ -92,261 +106,210 @@
       background: #444;
     }
 
-@media (max-width: 700px) {
-  .products {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px 10px;
-  }
+    @media (max-width: 700px) {
+      .container {
+        padding: 25px 12px;
+      }
 
-  .product img {
-    height: 140px;
-    object-fit: contain;
-  }
-}
+      h1 {
+        font-size: 25px;
+        margin-bottom: 25px;
+      }
 
-  .info {
-    padding: 10px;
-  }
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px 10px;
+      }
 
-  .name {
-    font-size: 14px;
-  }
+      .product img {
+        height: 140px;
+        object-fit: contain;
+      }
 
-  .description {
-    font-size: 12px;
-  }
+      .info {
+        padding: 10px;
+      }
 
-  .view {
-    padding: 9px 10px;
-    font-size: 12px;
-  }
-}
+      .name {
+        font-size: 14px;
+        min-height: 40px;
+      }
 
-/* ALIGN VIEW PRODUCT BUTTONS */
+      .description {
+        font-size: 12px;
+        line-height: 1.5;
+      }
 
-.product {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.name {
-  min-height: 36px;
-}
-
-.description {
-  flex: 1;
-}
-
-.view {
-  align-self: center;
-  margin-top: auto;
-}
-
+      .view {
+        padding: 9px 10px;
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <a href="index.html" class="back">← Back</a>
+    <a href="index.html" class="back">← Back</a>
 
-  <h1>Women's Essentials</h1>
+    <h1>Women's Essentials</h1>
 
-  <div class="products">
+    <div class="products">
 
-    <!-- PRODUCT 1 -->
-    <div class="product">
-      <img src="Mighty-Patch-Hero-1.jpg" alt="Mighty Patch Original">
+      <!-- PRODUCT 1 -->
+      <div class="product">
+        <img src="Mighty-Patch-Hero-1.jpg" alt="Mighty Patch Original">
 
-      <div class="info">
-        <div class="name">Mighty Patch Original</div>
+        <div class="info">
+          <div class="name">Mighty Patch Original</div>
 
-        <div class="description">
-          An easy-to-use hydrocolloid patch for targeted blemish care.
+          <div class="description">
+            An easy-to-use hydrocolloid patch for targeted blemish care.
+          </div>
+
+          <a href="women-product-1.html" class="view">View Product</a>
         </div>
-
-        <a href="women-product-1.html" class="view">
-          View Product
-        </a>
       </div>
-    </div>
 
+      <!-- PRODUCT 2 -->
+      <div class="product">
+        <img src="laneige1.jpg" alt="LANEIGE Lip Sleeping Mask">
 
-    <!-- PRODUCT 2 -->
-    <div class="product">
-      <img src="laneige1.jpg" alt="Women's Product 2">
+        <div class="info">
+          <div class="name">LANEIGE Lip Sleeping Mask</div>
 
-      <div class="info">
-        <div class="name">LANEIGE Lip Sleeping Mask</div>
+          <div class="description">
+            An overnight lip mask that helps keep lips feeling soft, smooth, and moisturized.
+          </div>
 
-        <div class="description">
-          An overnight lip mask that helps keep lips feeling soft, smooth, and moisturized.
-
+          <a href="women-product-2.html" class="view">View Product</a>
         </div>
-
-        <a href="women-product-2.html" class="view">
-          View Product
-        </a>
       </div>
-    </div>
 
+      <!-- PRODUCT 3 -->
+      <div class="product">
+        <img src="medicube1.jpg" alt="medicube Zero Pore Pad 2.0">
 
-    <!-- PRODUCT 3 -->
-    <div class="product">
-      <img src="medicube1.jpg" alt="Women's Product 3">
+        <div class="info">
+          <div class="name">medicube Zero Pore Pad 2.0</div>
 
-      <div class="info">
-        <div class="name">medicube Zero Pore Pad 2.0</div>
+          <div class="description">
+            A refreshing toner pad for gentle exfoliation and pore care.
+          </div>
 
-        <div class="description">
-          A refreshing toner pad for gentle exfoliation and pore care.
-
+          <a href="women-product-3.html" class="view">View Product</a>
         </div>
-
-        <a href="women-product-3.html" class="view">
-          View Product
-        </a>
       </div>
-    </div>
 
+      <!-- PRODUCT 4 -->
+      <div class="product">
+        <img src="numbuzin1.jpg" alt="numbuzin No.5 Toner Pads">
 
-    <!-- PRODUCT 4 -->
-    <div class="product">
-      <img src="numbuzin1.jpg" alt="Women's Product 4">
+        <div class="info">
+          <div class="name">numbuzin No.5 Toner Pads</div>
 
-      <div class="info">
-        <div class="name">numbuzin No.5 Toner Pads</div>
+          <div class="description">
+            Brightening toner pads for a refreshed, radiant-looking complexion.
+          </div>
 
-        <div class="description">
-          Brightening toner pads for a refreshed, radiant-looking complexion.
+          <a href="women-product-4.html" class="view">View Product</a>
         </div>
-
-        <a href="women-product-4.html" class="view">
-          View Product
-        </a>
       </div>
-    </div>
 
+      <!-- PRODUCT 5 -->
+      <div class="product">
+        <img src="Honey Tinted Lip Balm1.jpg" alt="Honey Tinted Lip Balm">
 
-    <!-- PRODUCT 5 -->
-    <div class="product">
-      <img src="Honey Tinted Lip Balm1.jpg" alt="Women's Product 5">
+        <div class="info">
+          <div class="name">Honey Tinted Lip Balm</div>
 
-      <div class="info">
-        <div class="name">Honey Tinted Lip Balm</div>
+          <div class="description">
+            A hydrating lip balm with a sheer black cherry tint.
+          </div>
 
-        <div class="description">
-          A hydrating lip balm with a sheer black cherry tint.
-
+          <a href="women-product-5.html" class="view">View Product</a>
         </div>
-
-        <a href="women-product-5.html" class="view">
-          View Product
-        </a>
       </div>
-    </div>
 
+      <!-- PRODUCT 6 -->
+      <div class="product">
+        <img src="WOMEN-6-IMAGE" alt="Women's Product 6">
 
-    <!-- PRODUCT 6 -->
-    <div class="product">
-      <img src="WOMEN-6-IMAGE" alt="Women's Product 6">
+        <div class="info">
+          <div class="name">Women's Product 6</div>
 
-      <div class="info">
-        <div class="name">Women's Product 6</div>
+          <div class="description">
+            Short description of the product goes here.
+          </div>
 
-        <div class="description">
-          Short description of the product goes here.
+          <a href="women-product-6.html" class="view">View Product</a>
         </div>
-
-        <a href="women-product-6.html" class="view">
-          View Product
-        </a>
       </div>
-    </div>
 
+      <!-- PRODUCT 7 -->
+      <div class="product">
+        <img src="WOMEN-7-IMAGE" alt="Women's Product 7">
 
-    <!-- PRODUCT 7 -->
-    <div class="product">
-      <img src="WOMEN-7-IMAGE" alt="Women's Product 7">
+        <div class="info">
+          <div class="name">Women's Product 7</div>
 
-      <div class="info">
-        <div class="name">Women's Product 7</div>
+          <div class="description">
+            Short description of the product goes here.
+          </div>
 
-        <div class="description">
-          Short description of the product goes here.
+          <a href="women-product-7.html" class="view">View Product</a>
         </div>
-
-        <a href="women-product-7.html" class="view">
-          View Product
-        </a>
       </div>
-    </div>
 
+      <!-- PRODUCT 8 -->
+      <div class="product">
+        <img src="WOMEN-8-IMAGE" alt="Women's Product 8">
 
-    <!-- PRODUCT 8 -->
-    <div class="product">
-      <img src="WOMEN-8-IMAGE" alt="Women's Product 8">
+        <div class="info">
+          <div class="name">Women's Product 8</div>
 
-      <div class="info">
-        <div class="name">Women's Product 8</div>
+          <div class="description">
+            Short description of the product goes here.
+          </div>
 
-        <div class="description">
-          Short description of the product goes here.
+          <a href="women-product-8.html" class="view">View Product</a>
         </div>
-
-        <a href="women-product-8.html" class="view">
-          View Product
-        </a>
       </div>
-    </div>
 
+      <!-- PRODUCT 9 -->
+      <div class="product">
+        <img src="WOMEN-9-IMAGE" alt="Women's Product 9">
 
-    <!-- PRODUCT 9 -->
-    <div class="product">
-      <img src="WOMEN-9-IMAGE" alt="Women's Product 9">
+        <div class="info">
+          <div class="name">Women's Product 9</div>
 
-      <div class="info">
-        <div class="name">Women's Product 9</div>
+          <div class="description">
+            Short description of the product goes here.
+          </div>
 
-        <div class="description">
-          Short description of the product goes here.
+          <a href="women-product-9.html" class="view">View Product</a>
         </div>
-
-        <a href="women-product-9.html" class="view">
-          View Product
-        </a>
       </div>
-    </div>
 
+      <!-- PRODUCT 10 -->
+      <div class="product">
+        <img src="WOMEN-10-IMAGE" alt="Women's Product 10">
 
-    <!-- PRODUCT 10 -->
-    <div class="product">
-      <img src="WOMEN-10-IMAGE" alt="Women's Product 10">
+        <div class="info">
+          <div class="name">Women's Product 10</div>
 
-      <div class="info">
-        <div class="name">Women's Product 10</div>
+          <div class="description">
+            Short description of the product goes here.
+          </div>
 
-        <div class="description">
-          Short description of the product goes here.
+          <a href="women-product-10.html" class="view">View Product</a>
         </div>
-
-        <a href="women-product-10.html" class="view">
-          View Product
-        </a>
       </div>
-    </div>
 
+    </div>
   </div>
-
-</div>
 
 </body>
 </html>
