@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,232 +17,134 @@
       font-family: Arial, sans-serif;
       background: #F2F7FC;
       color: #24476B;
+      min-height: 100vh;
     }
 
     /* HEADER */
 
-    header {
-      background: #24476B;
-      color: #FFFFFF;
-      text-align: center;
-      padding: 35px 20px;
-    }
-
-    header h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    /* NAVIGATION */
-
-    .back-link {
-      display: inline-block;
-      margin-top: 20px;
-      color: #F4CF55;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
-    /* MAIN CONTAINER */
-
-    .container {
-      max-width: 1200px;
+    .header-banner {
+      position: relative;
       width: 100%;
-      margin: auto;
-      padding: 35px 25px;
-    }
-
-    /* CATEGORY NAVIGATION */
-
-    .category-nav {
+      height: 180px;
+      overflow: hidden;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 40px;
-    }
-
-    .category-nav a {
-      padding: 12px 28px;
-      background: #FFFFFF;
-      color: #24476B;
-      border: 1px solid #D5E1ED;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .category-nav a:hover {
+      align-items: center;
       background: #24476B;
-      color: #FFFFFF;
     }
 
-    /* PRODUCT SECTIONS */
-
-    .product-section {
-      margin-bottom: 45px;
-      scroll-margin-top: 20px;
-    }
-
-    .section-heading {
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 3px solid #F4CF55;
-    }
-
-    .section-heading h2 {
-      font-size: 25px;
-      margin-bottom: 6px;
-    }
-
-    .section-heading p {
-      font-size: 13px;
-      color: #526A80;
-    }
-
-    /* PRODUCT GRID */
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .product-card {
-      min-width: 0;
-      overflow: hidden;
-      background: #FFFFFF;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(36, 71, 107, 0.08);
-      transition: transform 0.3s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .product-image {
-      width: 100%;
-      height: 230px;
-      background: #FFFFFF;
-      overflow: hidden;
-    }
-
-    .product-image img {
+    .header-background {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      display: block;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
     }
 
-    .product-info {
-      padding: 15px;
-      border-top: 2px solid #F4CF55;
+    .header-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 35, 55, 0.35);
+      z-index: 1;
     }
 
-    .product-info h3 {
-      font-size: 15px;
-      margin-bottom: 8px;
-    }
+    /* HEADER CONTENT */
 
-    .product-info p {
-      color: #526A80;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    /* FOOTER */
-
-    footer {
-      margin-top: 20px;
-      padding: 22px 15px;
-      background: #24476B;
+    .header-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 25px;
       color: #FFFFFF;
-      text-align: center;
-      font-size: 12px;
     }
 
-    /* TABLET */
+    .header-content h1 {
+      font-size: 32px;
+      font-weight: bold;
+    }
 
-    @media (max-width: 900px) {
-      .container {
-        padding: 25px 18px;
-      }
+    /* SEARCH BAR */
 
-      .products {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
-      }
+    .header-search {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      z-index: 3;
+      width: 280px;
+      max-width: calc(100% - 30px);
+    }
 
-      .product-image {
-        height: 200px;
-      }
+    .header-search form {
+      display: flex;
+      align-items: center;
+      background: #FFFFFF;
+      border-radius: 25px;
+      padding: 3px 12px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .header-search input {
+      flex: 1;
+      width: 100%;
+      min-width: 0;
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 10px 4px;
+      font-size: 13px;
+      color: #24476B;
+    }
+
+    .header-search input::placeholder {
+      color: #8292A3;
+    }
+
+    .header-search button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: transparent;
+      color: #24476B;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .header-search svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
     }
 
     /* MOBILE */
 
     @media (max-width: 600px) {
-      header {
-        padding: 28px 15px;
+      .header-banner {
+        height: 150px;
       }
 
-      header h1 {
-        font-size: 26px;
+      .header-background {
+        object-fit: cover;
+        object-position: center center;
       }
 
-      header p {
-        font-size: 13px;
+      .header-content {
+        padding: 65px 15px 15px;
+        text-align: center;
       }
 
-      .container {
-        padding: 22px 10px;
+      .header-content h1 {
+        font-size: 24px;
       }
 
-      .category-nav {
-        gap: 8px;
-        margin-bottom: 30px;
-      }
-
-      .category-nav a {
-        padding: 10px 16px;
-        font-size: 12px;
-      }
-
-      .section-heading h2 {
-        font-size: 21px;
-      }
-
-      .products {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .product-image {
-        height: 180px;
-      }
-
-      .product-info {
-        padding: 12px 10px;
-      }
-
-      .product-info h3 {
-        font-size: 13px;
-      }
-
-      .product-info p {
-        font-size: 12px;
+      .header-search {
+        top: 10px;
+        right: 12px;
+        width: 230px;
       }
     }
   </style>
@@ -251,199 +152,41 @@
 
 <body>
 
-  <!-- HEADER -->
+  <header class="header-banner">
 
-  <header>
-    <h1>Women's Essentials</h1>
+    <img
+      src="header.gif.gif"
+      alt=""
+      class="header-background"
+    >
 
-    <p>
-      Discover your everyday beauty essentials,
-      from face products to eye and lip favorites.
-    </p>
+    <div class="header-overlay"></div>
 
-    <a href="index.html" class="back-link">
-      ← BACK TO HOME
-    </a>
+    <div class="header-search">
+      <form action="women-essentials.html" method="get">
+        <input
+          type="search"
+          name="q"
+          placeholder="Search products..."
+          aria-label="Search products"
+        >
+
+        <button type="submit" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.5"></circle>
+            <path d="M15.5 15.5L21 21"></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <div class="header-content">
+      <h1>Women's Essentials</h1>
+    </div>
+
   </header>
 
-  <main class="container">
-
-    <!-- CATEGORY NAVIGATION -->
-
-    <nav class="category-nav">
-      <a href="#face">FACE</a>
-      <a href="#eyes">EYES</a>
-      <a href="#lips">LIPS</a>
-    </nav>
-
-    <!-- FACE -->
-
-    <section class="product-section" id="face">
-
-      <div class="section-heading">
-        <h2>Face</h2>
-        <p>Everyday essentials for your face.</p>
-      </div>
-
-      <div class="products">
-
-        <article class="product-card">
-          <div class="product-image">
-            <img src="face-product-1.png" alt="Face Product 1">
-          </div>
-          <div class="product-info">
-            <h3>Face Product 1</h3>
-            <p>Add your product description here.</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image">
-            <img src="face-product-2.png" alt="Face Product 2">
-          </div>
-          <div class="product-info">
-            <h3>Face Product 2</h3>
-            <p>Add your product description here.</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image">
-            <img src="face-product-3.png" alt="Face Product 3">
-          </div>
-          <div class="product-info">
-            <h3>Face Product 3</h3>
-            <p>Add your product description here.</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image">
-            <img src="face-product-4.png" alt="Face Product 4">
-          </div>
-          <div class="product-info">
-            <h3>Face Product 4</h3>
-            <p>Add your product description here.</p>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- EYES -->
-
-    <section class="product-section" id="eyes">
-
-      <div class="section-heading">
-        <h2>Eyes</h2>
-        <p>Make your eyes stand out.</p>
-      </div>
-
-      <div class="products">
-
-        <article class="product-card">
-          <div class="product-image">
-            <img src="eyes-product-1.png" alt="Eye Product 1">
-          </div>
-          <div class="product-info">
-            <h3>Eye Product 1</h3>
-            <p>Add your product description here.</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image">
-            <img src="eyes-product-2.png" alt="Eye Product 2">
-          </div>
-          <div class="product-info">
-            <h3>Eye Product 2</h3>
-            <p>Add your product description here.</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image">
-            <img src="eyes-product-3.png" alt="Eye Product 3">
-          </div>
-          <div class="product-info">
-            <h3>Eye Product 3</h3>
-            <p>Add your product description here.</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image">
-            <img src="eyes-product-4.png" alt="Eye Product 4">
-          </div>
-          <div class="product-info">
-            <h3>Eye Product 4</h3>
-            <p>Add your product description here.</p>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- LIPS -->
-
-    <section class="product-section" id="lips">
-
-      <div class="section-heading">
-        <h2>Lips</h2>
-        <p>Find your everyday lip favorites.</p>
-      </div>
-
-      <div class="products">
-
-        <article class="product-card">
-          <div class="product-image">
-            <img src="lips-product-1.png" alt="Lip Product 1">
-          </div>
-          <div class="product-info">
-            <h3>Lip Product 1</h3>
-            <p>Add your product description here.</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image">
-            <img src="lips-product-2.png" alt="Lip Product 2">
-          </div>
-          <div class="product-info">
-            <h3>Lip Product 2</h3>
-            <p>Add your product description here.</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image">
-            <img src="lips-product-3.png" alt="Lip Product 3">
-          </div>
-          <div class="product-info">
-            <h3>Lip Product 3</h3>
-            <p>Add your product description here.</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-image">
-            <img src="lips-product-4.png" alt="Lip Product 4">
-          </div>
-          <div class="product-info">
-            <h3>Lip Product 4</h3>
-            <p>Add your product description here.</p>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    © 2026 Discover Your Style
-  </footer>
+  <main></main>
 
 </body>
 </html>
-```
