@@ -121,6 +121,48 @@
       stroke-linecap: round;
     }
 
+    /* CATEGORY SECTION */
+
+    .women-categories {
+      max-width: 1200px;
+      margin: 35px auto;
+      padding: 0 25px;
+    }
+
+    .women-categories h2 {
+      font-size: 25px;
+      font-weight: bold;
+      color: #24476B;
+      margin-bottom: 22px;
+    }
+
+    .category-choices {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .category-choice {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+      padding: 20px;
+      background: #FFFFFF;
+      border: 1px solid #D8E3EF;
+      border-radius: 8px;
+      color: #24476B;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .category-choice:hover {
+      background: #E5EEF8;
+      transform: translateY(-2px);
+    }
+
     /* MOBILE ONLY */
 
     @media (max-width: 600px) {
@@ -150,6 +192,27 @@
         top: 10px;
         right: 12px;
         width: 220px;
+      }
+
+      .women-categories {
+        margin: 25px auto;
+        padding: 0 15px;
+      }
+
+      .women-categories h2 {
+        font-size: 21px;
+        margin-bottom: 15px;
+      }
+
+      .category-choices {
+        gap: 10px;
+      }
+
+      .category-choice {
+        min-height: 85px;
+        padding: 8px 4px;
+        font-size: 15px;
+        text-align: center;
       }
     }
   </style>
@@ -197,7 +260,21 @@
 
   </header>
 
-  <main></main>
+  <!-- WOMEN'S CATEGORIES -->
+
+  <main>
+    <section class="women-categories">
+
+      <h2>Shop by Category</h2>
+
+      <div class="category-choices">
+        <a href="face.html" class="category-choice">Face</a>
+        <a href="eyes.html" class="category-choice">Eyes</a>
+        <a href="lips.html" class="category-choice">Lips</a>
+      </div>
+
+    </section>
+  </main>
 
 </body>
 </html>
