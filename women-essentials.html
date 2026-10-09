@@ -1,1 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Women's Essentials</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f3ee;
+      color: #292521;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #eee5dc;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #77685d;
+    }
+
+    /* INTRODUCTION */
+
+    .intro {
+      text-align: center;
+      padding: 45px 20px 30px;
+    }
+
+    .intro h1 {
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      color: #766a60;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* CATEGORY GRID */
+
+    .categories {
+      max-width: 1100px;
+      margin: auto;
+      padding: 10px 25px 55px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .category-card {
+      background: #fff;
+      display: block;
+      overflow: hidden;
+    }
+
+    .category-image {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      background: #eee6df;
+    }
+
+    .category-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .category-info {
+      text-align: center;
+      padding: 20px 12px 24px;
+    }
+
+    .category-info h2 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .category-info p {
+      color: #766a60;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .explore {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #8a6d58;
+      padding-bottom: 4px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 12px;
+      color: #766a60;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      .logo {
+        font-size: 21px;
+      }
+
+      .intro {
+        padding: 35px 18px 25px;
+      }
+
+      .intro h1 {
+        font-size: 27px;
+      }
+
+      .categories {
+        padding: 10px 15px 35px;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .category-image {
+        height: 280px;
+      }
+
+      .category-info {
+        padding: 16px 12px 20px;
+      }
+    }
+
+    @media (min-width: 701px) and (max-width: 1000px) {
+      .category-image {
+        height: 240px;
+      }
+
+      .category-grid {
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <a href="index.html">
+      <div class="logo">WOMEN'S ESSENTIALS</div>
+    </a>
+
+    <a href="index.html" class="back-link">
+      ← Back to Home
+    </a>
+  </header>
+
+  <!-- INTRODUCTION -->
+
+  <section class="intro">
+    <h1>Discover Your Beauty</h1>
+
+    <p>
+      Explore your everyday beauty essentials,
+      from skincare to eye and lip favorites.
+    </p>
+  </section>
+
+  <!-- CATEGORIES -->
+
+  <section class="categories">
+    <div class="category-grid">
+
+      <!-- FACE -->
+
+      <a href="face.html" class="category-card">
+        <div class="category-image">
+          <img
+            src="images/face.jpg"
+            alt="Face skincare essentials"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="category-info">
+          <h2>Face</h2>
+          <p>Skincare and face essentials.</p>
+          <span class="explore">EXPLORE FACE</span>
+        </div>
+      </a>
+
+      <!-- EYES -->
+
+      <a href="eyes.html" class="category-card">
+        <div class="category-image">
+          <img
+            src="images/eyes.jpg"
+            alt="Eye beauty essentials"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="category-info">
+          <h2>Eyes</h2>
+          <p>Discover your eye-care and beauty favorites.</p>
+          <span class="explore">EXPLORE EYES</span>
+        </div>
+      </a>
+
+      <!-- LIPS -->
+
+      <a href="lips.html" class="category-card">
+        <div class="category-image">
+          <img
+            src="images/lips.jpg"
+            alt="Lip care and lip color essentials"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="category-info">
+          <h2>Lips</h2>
+          <p>Lip care, hydration, and everyday color.</p>
+          <span class="explore">EXPLORE LIPS</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>&copy; 2026 Discover Your Style. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
