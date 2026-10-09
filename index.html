@@ -35,14 +35,17 @@ h1{font-size:clamp(34px,5vw,54px);line-height:1.08;margin-bottom:15px}
 .heading{text-align:center;margin-bottom:20px}
 .heading h2{font-size:25px;color:var(--blue)}
 .heading p{font-size:13px;color:#687386;margin-top:5px}
-.categories{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.category{height:210px;position:relative;overflow:hidden;border-radius:9px;background:#eaf2fb}
+
+/* TWO CATEGORIES PER ROW */
+.categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.category{height:230px;position:relative;overflow:hidden;border-radius:9px;background:#eaf2fb}
 .category img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .category:hover img{transform:scale(1.04)}
 .category:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(10,30,60,.8))}
-.category-info{position:absolute;z-index:1;left:14px;bottom:15px;color:white}
-.category-info h3{font-size:20px;margin-bottom:3px}
-.category-info span{font-size:9px;letter-spacing:.7px;font-weight:700;color:var(--yellow)}
+.category-info{position:absolute;z-index:1;left:16px;bottom:15px;color:white}
+.category-info h3{font-size:21px;margin-bottom:3px}
+.category-info span{font-size:10px;letter-spacing:1px;font-weight:700;color:var(--yellow)}
+
 .featured{background:var(--pale);padding-top:30px;padding-bottom:32px}
 .products{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
 .product{background:white;border:1px solid #e5eaf1;border-radius:8px;overflow:hidden;min-width:0}
@@ -68,15 +71,16 @@ nav a{font-size:11px}
 .hero-inner{min-height:300px;padding:28px 22px;background-position:center}
 .section{padding-left:15px;padding-right:15px;padding-bottom:32px}
 .categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.category{height:175px}
+.category{height:190px}
 .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
 .product img{height:170px}
 }
+
 @media(max-width:480px){
 .top{font-size:9px;letter-spacing:1px}
 .header-inner{gap:10px}
 .logo{font-size:18px}
-nav{width:100%;justify-content:space-between;gap:5px}
+nav{width:100%;justify-content:space-between;gap:5px;flex-wrap:wrap}
 nav a{font-size:10px}
 .hero-inner{min-height:290px;padding:25px 19px}
 h1{font-size:34px}
