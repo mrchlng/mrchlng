@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Discover Your Style</title>
+  <title>Discover Your Style | Beauty & Everyday Essentials</title>
+
+  <meta name="description" content="Discover beauty, skincare, everyday essentials, and fragrances thoughtfully curated to complement your personal style.">
 
   <style>
     * {
@@ -13,10 +15,88 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: #F2F7FC;
       color: #24476B;
+    }
+
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid #DCE5EE;
+    }
+
+    .brand {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      padding: 27px 15px 23px;
+      color: #24476B;
+    }
+
+    .brand-tagline {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 3px;
+      font-weight: 600;
+      color: #71849A;
+      margin-bottom: 9px;
+    }
+
+    .brand-name {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 32px;
+      font-weight: normal;
+      letter-spacing: 3px;
+      line-height: 1.3;
+    }
+
+    .brand-line {
+      width: 48px;
+      height: 3px;
+      background: #F4CF55;
+      margin: 13px auto 0;
+      border-radius: 3px;
+    }
+
+    /* NAVIGATION */
+
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+      border-top: 1px solid #EDF1F5;
+      padding: 0 12px;
+    }
+
+    .main-nav a {
+      display: block;
+      padding: 16px 21px;
+      color: #24476B;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: color 0.2s ease,
+                  background 0.2s ease;
+    }
+
+    .main-nav a:hover {
+      color: #8B6A13;
+      background: #FFF9E8;
     }
 
     /* MAIN CONTAINER */
@@ -36,8 +116,10 @@
     }
 
     .intro h1 {
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 38px;
-      font-weight: bold;
+      font-weight: normal;
+      letter-spacing: 0.5px;
       color: #24476B;
       margin-bottom: 15px;
     }
@@ -118,6 +200,8 @@
       font-size: 13px;
       font-weight: bold;
       letter-spacing: 0.5px;
+      transition: background 0.2s ease,
+                  color 0.2s ease;
     }
 
     .category-card:hover .category-link {
@@ -136,7 +220,9 @@
     }
 
     .featured h2 {
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 28px;
+      font-weight: normal;
       color: #24476B;
       margin-bottom: 12px;
     }
@@ -173,11 +259,47 @@
       .category-info h2 {
         font-size: 19px;
       }
+
+      .main-nav a {
+        padding: 15px 13px;
+      }
     }
 
     /* MOBILE */
 
     @media (max-width: 600px) {
+      .brand {
+        padding: 23px 12px 20px;
+      }
+
+      .brand-tagline {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+      }
+
+      .brand-name {
+        font-size: 25px;
+        letter-spacing: 2px;
+      }
+
+      .brand-line {
+        margin-top: 11px;
+      }
+
+      .main-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 5px 10px;
+        gap: 2px;
+      }
+
+      .main-nav a {
+        text-align: center;
+        padding: 12px 5px;
+        font-size: 10px;
+        letter-spacing: 0.5px;
+      }
+
       .container {
         padding: 15px;
       }
@@ -187,12 +309,13 @@
       }
 
       .intro h1 {
-        font-size: 30px;
+        font-size: 29px;
+        line-height: 1.3;
       }
 
       .intro p {
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.8;
       }
 
       .categories {
@@ -218,7 +341,28 @@
       }
 
       .featured h2 {
-        font-size: 24px;
+        font-size: 25px;
+      }
+
+      .featured p {
+        font-size: 14px;
+      }
+    }
+
+    /* SMALL MOBILE */
+
+    @media (max-width: 360px) {
+      .brand-name {
+        font-size: 22px;
+        letter-spacing: 1.5px;
+      }
+
+      .main-nav a {
+        font-size: 9px;
+      }
+
+      .category-image {
+        height: 230px;
       }
     }
   </style>
@@ -226,18 +370,47 @@
 
 <body>
 
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <a href="index.html" class="brand">
+      <span class="brand-tagline">
+        BEAUTY · ESSENTIALS · FRAGRANCE
+      </span>
+
+      <span class="brand-name">
+        DISCOVER YOUR STYLE
+      </span>
+
+      <span class="brand-line"></span>
+    </a>
+
+    <!-- NAVIGATION -->
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">HOME</a>
+      <a href="womens-essentials.html">WOMEN'S ESSENTIALS</a>
+      <a href="mens-essentials.html">MEN'S ESSENTIALS</a>
+      <a href="fragrance.html">FRAGRANCE</a>
+    </nav>
+
+  </header>
+
   <main class="container">
 
     <!-- INTRODUCTION -->
 
     <section class="intro">
+
       <h1>Discover Your Style</h1>
 
       <p>
         Discover beauty, skincare, everyday essentials,
-        and fragrances thoughtfully selected to complement
+        and fragrances thoughtfully curated to complement
         your personal style.
       </p>
+
     </section>
 
     <!-- CATEGORIES -->
@@ -247,6 +420,7 @@
       <!-- WOMEN'S ESSENTIALS -->
 
       <a href="womens-essentials.html" class="category-card">
+
         <div class="category-image">
           <img
             src="images/womens-essentials.jpg"
@@ -255,6 +429,7 @@
         </div>
 
         <div class="category-info">
+
           <h2>Women's Essentials</h2>
 
           <p>
@@ -263,12 +438,15 @@
           </p>
 
           <span class="category-link">EXPLORE</span>
+
         </div>
+
       </a>
 
       <!-- MEN'S ESSENTIALS -->
 
       <a href="mens-essentials.html" class="category-card">
+
         <div class="category-image">
           <img
             src="images/mens-essentials.jpg"
@@ -277,6 +455,7 @@
         </div>
 
         <div class="category-info">
+
           <h2>Men's Essentials</h2>
 
           <p>
@@ -285,12 +464,15 @@
           </p>
 
           <span class="category-link">EXPLORE</span>
+
         </div>
+
       </a>
 
       <!-- FRAGRANCE -->
 
       <a href="fragrance.html" class="category-card">
+
         <div class="category-image">
           <img
             src="images/fragrance.jpg"
@@ -299,6 +481,7 @@
         </div>
 
         <div class="category-info">
+
           <h2>Fragrance</h2>
 
           <p>
@@ -307,7 +490,9 @@
           </p>
 
           <span class="category-link">EXPLORE</span>
+
         </div>
+
       </a>
 
     </section>
@@ -315,6 +500,7 @@
     <!-- FEATURED PRODUCTS -->
 
     <section class="featured">
+
       <h2>Featured Products</h2>
 
       <div class="featured-line"></div>
@@ -323,6 +509,7 @@
         Discover our handpicked favorites.
         Stay tuned for featured products.
       </p>
+
     </section>
 
   </main>
