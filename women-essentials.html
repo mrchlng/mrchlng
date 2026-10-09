@@ -310,26 +310,41 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const productsContainer = document.querySelector(".products");
-      const products = Array.from(
-        productsContainer.querySelectorAll(".product")
-      );
+  ```html
+<script>
+  function shuffleProducts() {
+    const container = document.querySelector(".products");
 
-      // Shuffle ang products sa bawat page load
-      for (let i = products.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+    if (!container) return;
 
-        [products[i], products[j]] = [products[j], products[i]];
-      }
+    const products = Array.from(
+      container.querySelectorAll(".product")
+    );
 
-      // Ipakita ang products sa bagong pagkakasunod-sunod
-      products.forEach(function (product) {
-        productsContainer.appendChild(product);
-      });
+    for (let i = products.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      [products[i], products[j]] =
+        [products[j], products[i]];
+    }
+
+    products.forEach(function (product) {
+      container.appendChild(product);
     });
-  </script>
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    shuffleProducts();
+  });
+
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+      shuffleProducts();
+    }
+  });
+</script>
+```
+
 
 </body>
 </html>
