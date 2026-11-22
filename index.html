@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgroPrime | Choose a Category</title>
+  <title>AgroPrime.ph | Farm &amp; General Supplies</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,6 +29,7 @@
             },
             harvest: {
               400: '#facc15',
+              500: '#eab308',
             }
           }
         }
@@ -38,99 +39,217 @@
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased">
 
-  <!-- HEADER -->
-  <header class="bg-white border-b border-slate-200">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+  <!-- HEADER (PC & Mobile) -->
+  <header class="sticky top-0 z-20 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-2.5">
         <span class="w-9 h-9 rounded-xl bg-farm-700 text-white flex items-center justify-center text-lg">🌱</span>
-        <span class="font-display font-extrabold text-lg tracking-tight">
-          AgroPrime<span class="text-farm-600">.ph</span>
-        </span>
+        <div>
+          <span class="font-display font-extrabold text-lg tracking-tight block leading-none">
+            AgroPrime<span class="text-farm-600">.ph</span>
+          </span>
+          <span class="text-[11px] text-slate-500 font-medium">Farm &amp; Multi-Supply Hub</span>
+        </div>
       </a>
-      <span class="text-xs font-semibold text-farm-700 bg-farm-50 border border-farm-200 px-3 py-1 rounded-full">
-        Farm &amp; Supply Hub
-      </span>
+
+      <!-- Quick Nav (Desktop) -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+        <a href="farm-poultry.html" class="text-farm-700 font-bold">🐓 Farm &amp; Poultry</a>
+        <a href="water-systems.html" class="hover:text-farm-700 transition">💧 Water</a>
+        <a href="tools-business.html" class="hover:text-farm-700 transition">🛠️ Tools &amp; Business</a>
+        <a href="home-pet-tech.html" class="hover:text-farm-700 transition">🏠 Home &amp; Tech</a>
+      </nav>
     </div>
   </header>
 
-  <!-- HERO + CATEGORY CHOICES ONLY -->
-  <main class="flex-1 flex flex-col justify-center max-w-5xl w-full mx-auto px-4 sm:px-6 py-10 sm:py-16">
-    <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10">
-      <span class="inline-block px-3 py-1 rounded-full bg-farm-100 text-farm-800 text-xs font-bold mb-3">
-        🐓 Main Focus: Farm &amp; Poultry
-      </span>
-      <h1 class="font-display text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-        Select a Category
-      </h1>
-      <p class="text-sm sm:text-base text-slate-500 mt-2">
-        Choose a department below to view products.
-      </p>
-    </div>
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-12 sm:space-y-14">
 
-    <!-- 4 CATEGORY CHOICES (NO ITEMS LISTED) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-      <!-- 1. PRIMARY FOCUS -->
-      <a href="farm-poultry.html" class="group relative p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-farm-900 to-farm-800 text-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition flex items-center justify-between">
-        <div>
-          <span class="inline-block text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-harvest-400 text-farm-950 mb-2">
-            Primary Focus
-          </span>
-          <h2 class="font-display text-xl sm:text-2xl font-extrabold">🐓 Farm &amp; Poultry</h2>
-          <p class="text-xs text-farm-200 mt-1">farm-poultry.html</p>
-        </div>
-        <span class="w-10 h-10 rounded-xl bg-white/10 group-hover:bg-harvest-400 group-hover:text-farm-950 flex items-center justify-center font-bold text-lg transition">
-          →
+    <!-- TOP SECTION: CATEGORY CHOICES -->
+    <section>
+      <div class="mb-6">
+        <span class="inline-block px-3 py-1 rounded-full bg-farm-100 text-farm-800 text-xs font-bold mb-2">
+          🐓 Primary Focus: Farm &amp; Poultry
         </span>
-      </a>
+        <h1 class="font-display text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+          Choose a Category
+        </h1>
+        <p class="text-sm sm:text-base text-slate-500 mt-1">
+          Select a department to browse all items inside that category.
+        </p>
+      </div>
 
-      <!-- 2. WATER SYSTEMS -->
-      <a href="water-systems.html" class="group p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex items-center justify-between">
-        <div>
-          <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
-            Category 02
-          </span>
-          <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 group-hover:text-farm-700">💧 Water Systems</h2>
-          <p class="text-xs text-slate-400 mt-1">water-systems.html</p>
-        </div>
-        <span class="w-10 h-10 rounded-xl bg-slate-100 group-hover:bg-farm-700 group-hover:text-white flex items-center justify-center font-bold text-lg text-slate-600 transition">
-          →
-        </span>
-      </a>
+      <!-- 4 Category Cards (Mobile: 1-col / 2-col | Desktop: 4-col) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
+        <!-- 1. Primary Focus -->
+        <a href="farm-poultry.html" class="group p-5 rounded-2xl bg-gradient-to-br from-farm-900 to-farm-800 text-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">🐓</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-harvest-400 text-farm-950">
+                Main Focus
+              </span>
+            </div>
+            <h2 class="font-display text-lg font-extrabold">Farm &amp; Poultry</h2>
+            <p class="text-xs text-farm-200 mt-1">Cages, feeders, incubators, fertile eggs, fence &amp; hydroponics</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/15 flex items-center justify-between text-xs font-bold text-harvest-400">
+            <span>Open Category</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
 
-      <!-- 3. TOOLS & BUSINESS -->
-      <a href="tools-business.html" class="group p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex items-center justify-between">
-        <div>
-          <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
-            Category 03
-          </span>
-          <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 group-hover:text-farm-700">🛠️ Tools &amp; Business</h2>
-          <p class="text-xs text-slate-400 mt-1">tools-business.html</p>
-        </div>
-        <span class="w-10 h-10 rounded-xl bg-slate-100 group-hover:bg-farm-700 group-hover:text-white flex items-center justify-center font-bold text-lg text-slate-600 transition">
-          →
-        </span>
-      </a>
+        <!-- 2. Water Systems -->
+        <a href="water-systems.html" class="group p-5 rounded-2xl bg-white border border-slate-200 hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">💧</span>
+              <span class="text-[11px] font-semibold text-slate-400">02</span>
+            </div>
+            <h2 class="font-display text-lg font-extrabold text-slate-900 group-hover:text-farm-700">Water Systems</h2>
+            <p class="text-xs text-slate-500 mt-1">Solar water pump, portable water tank &amp; water drum</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-farm-700">
+            <span>Open Category</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
 
-      <!-- 4. HOME, PET & TECH -->
-      <a href="home-pet-tech.html" class="group p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex items-center justify-between">
+        <!-- 3. Tools & Business -->
+        <a href="tools-business.html" class="group p-5 rounded-2xl bg-white border border-slate-200 hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">🛠️</span>
+              <span class="text-[11px] font-semibold text-slate-400">03</span>
+            </div>
+            <h2 class="font-display text-lg font-extrabold text-slate-900 group-hover:text-farm-700">Tools &amp; Business</h2>
+            <p class="text-xs text-slate-500 mt-1">Welding machine, tools, pressure washer &amp; vendo carwash</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-farm-700">
+            <span>Open Category</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
+
+        <!-- 4. Home, Pet & Tech -->
+        <a href="home-pet-tech.html" class="group p-5 rounded-2xl bg-white border border-slate-200 hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">🏠</span>
+              <span class="text-[11px] font-semibold text-slate-400">04</span>
+            </div>
+            <h2 class="font-display text-lg font-extrabold text-slate-900 group-hover:text-farm-700">Home, Pet &amp; Tech</h2>
+            <p class="text-xs text-slate-500 mt-1">Cat cage, lagayan ng plato, duyan, cutter, mobile &amp; speaker</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-farm-700">
+            <span>Open Category</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- BOTTOM SECTION: RANDOM ITEMS SHOWCASE -->
+    <section>
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 pb-3.5 mb-6">
         <div>
-          <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
-            Category 04
-          </span>
-          <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 group-hover:text-farm-700">🏠 Home, Pet &amp; Tech</h2>
-          <p class="text-xs text-slate-400 mt-1">home-pet-tech.html</p>
+          <span class="text-xs font-bold uppercase tracking-wider text-farm-700">Featured Picks</span>
+          <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900">
+            Random Items You Might Need
+          </h2>
         </div>
-        <span class="w-10 h-10 rounded-xl bg-slate-100 group-hover:bg-farm-700 group-hover:text-white flex items-center justify-center font-bold text-lg text-slate-600 transition">
-          →
-        </span>
-      </a>
-    </div>
+
+        <button onclick="renderRandomItems()" class="self-start sm:self-auto inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 hover:border-farm-600 text-xs sm:text-sm font-semibold text-slate-700 hover:text-farm-700 shadow-2xs transition cursor-pointer">
+          <span>🔀</span>
+          <span>Shuffle Random Items</span>
+        </button>
+      </div>
+
+      <!-- Random Items Grid (Mobile: 2-col | Tablet: 3-col | PC: 4-col) -->
+      <div id="randomGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5">
+        <!-- Random items injected here by JS -->
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-white border-t border-slate-200 text-slate-400 text-xs py-5 text-center">
-    AgroPrime.ph — PC &amp; Mobile Category Portal
+  <footer class="bg-slate-900 text-slate-400 text-xs py-6 text-center border-t border-slate-800 mt-8">
+    AgroPrime.ph — Farm, Water, Tools &amp; Everyday Supplies
   </footer>
 
+  <script>
+    // ALL 19 PRODUCTS WITH LINKS TO THEIR INDIVIDUAL HTML PAGES
+    const allItems = [
+      // Farm & Poultry (Primary)
+      { name: 'Chicken Cage', category: 'Farm & Poultry', icon: '🐓', link: 'chicken-cage.html', desc: 'Heavy-duty galvanized wire poultry cage.' },
+      { name: 'Electric Fence Energiser', category: 'Farm & Poultry', icon: '⚡', link: 'electric-fence-energiser.html', desc: 'High-voltage pulse fence security for farms.' },
+      { name: 'Chicken Feeder', category: 'Farm & Poultry', icon: '🌾', link: 'chicken-feeder.html', desc: 'Anti-spill feeder for chicks and layers.' },
+      { name: 'Egg Incubator', category: 'Farm & Poultry', icon: '🐣', link: 'egg-incubator.html', desc: 'Digital automatic egg turning incubator.' },
+      { name: 'Fertile Eggs', category: 'Farm & Poultry', icon: '🥚', link: 'fertile-eggs.html', desc: 'Fresh, high-fertility hatching eggs.' },
+      { name: 'Hydroponic Rack', category: 'Farm & Poultry', icon: '🥬', link: 'hydroponic-rack.html', desc: 'Vertical soil-free vegetable growing rack.' },
+
+      // Water Systems
+      { name: 'Solar Water Pump', category: 'Water Systems', icon: '☀️', link: 'solar-water-pump.html', desc: 'Off-grid solar-powered irrigation pump.' },
+      { name: 'Portable Water Tank', category: 'Water Systems', icon: '💧', link: 'portable-water-tank.html', desc: 'Collapsible heavy-duty water storage tank.' },
+      { name: 'Drum (Lagayan ng Tubig)', category: 'Water Systems', icon: '🛢️', link: 'drum-lagayan-ng-tubig.html', desc: 'Thick HDPE drum for clean water storage.' },
+
+      // Tools & Business
+      { name: 'Welding Machine', category: 'Tools & Business', icon: '🔥', link: 'welding-machine.html', desc: 'Portable IGBT inverter welding machine.' },
+      { name: 'Tools', category: 'Tools & Business', icon: '🧰', link: 'tools.html', desc: 'Complete heavy-duty repair & mechanic tool kit.' },
+      { name: 'Pressure Washer', category: 'Tools & Business', icon: '💦', link: 'pressure-washer.html', desc: 'High-pressure cleaner for cages & vehicles.' },
+      { name: 'Vendo Carwash', category: 'Tools & Business', icon: '🪙', link: 'vendo-carwash.html', desc: 'Coin-operated self-service carwash machine.' },
+
+      // Home, Pet & Tech
+      { name: 'Cat Cage', category: 'Home, Pet & Tech', icon: '🐈', link: 'cat-cage.html', desc: 'Multi-tier collapsible wire pet cage.' },
+      { name: 'Lagayan ng Plato', category: 'Home, Pet & Tech', icon: '🍽️', link: 'lagayan-ng-plato.html', desc: '2-tier rust-proof kitchen dish rack drainer.' },
+      { name: 'Duyan', category: 'Home, Pet & Tech', icon: '🌴', link: 'duyan.html', desc: 'Durable woven hammock for outdoor or indoor rest.' },
+      { name: 'Vegetable Cutter', category: 'Home, Pet & Tech', icon: '🥕', link: 'vegetable-cutter.html', desc: 'Multi-blade kitchen slicer & chopper.' },
+      { name: 'Mobile Phone', category: 'Home, Pet & Tech', icon: '📱', link: 'mobile-phone.html', desc: 'Long-battery smartphone for daily & business use.' },
+      { name: 'Speaker', category: 'Home, Pet & Tech', icon: '🔊', link: 'speaker.html', desc: 'Portable wireless Bluetooth & FM speaker.' }
+    ];
+
+    function renderRandomItems() {
+      // Shuffle array (Fisher-Yates) and pick 8 random items (fits 2-col mobile & 4-col PC evenly)
+      const shuffled = [...allItems];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      const picks = shuffled.slice(0, 8);
+
+      const grid = document.getElementById('randomGrid');
+      grid.innerHTML = picks.map(item => {
+        const isFarm = item.category === 'Farm & Poultry';
+        return `
+          <a href="${item.link}" class="group bg-white rounded-2xl border ${isFarm ? 'border-farm-200' : 'border-slate-200'} hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex flex-col overflow-hidden">
+            <div class="h-28 sm:h-32 ${isFarm ? 'bg-farm-50' : 'bg-slate-100'} flex items-center justify-center border-b border-slate-100">
+              <span class="text-4xl sm:text-5xl group-hover:scale-110 transition-transform duration-200">${item.icon}</span>
+            </div>
+            <div class="p-3.5 sm:p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-wider ${isFarm ? 'text-farm-700' : 'text-slate-400'}">
+                  ${item.category}
+                </span>
+                <h3 class="font-display font-bold text-sm sm:text-base text-slate-900 group-hover:text-farm-700 mt-0.5 line-clamp-1">
+                  ${item.name}
+                </h3>
+                <p class="text-xs text-slate-500 mt-1 line-clamp-2">
+                  ${item.desc}
+                </p>
+              </div>
+              <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-farm-700">
+                <span>View Product</span>
+                <span class="group-hover:translate-x-1 transition">→</span>
+              </div>
+            </div>
+          </a>
+        `;
+      }).join('');
+    }
+
+    // Load random items on page load
+    renderRandomItems();
+  </script>
 </body>
 </html>
