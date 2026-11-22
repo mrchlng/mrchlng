@@ -234,7 +234,7 @@
       grid.innerHTML = picks.map(item => {
         const isFarm = item.category === 'Farm & Poultry';
         const mediaContent = item.image
-          ? `<img src="${item.image}" alt="${item.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" onerror="handleImageError(this)" />`
+          ? `<img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" onerror="handleImageError(this)" />`
           : `<span class="text-xs font-semibold text-slate-400">No Image</span>`;
 
         return `
