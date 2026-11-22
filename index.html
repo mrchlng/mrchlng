@@ -169,7 +169,14 @@
   <script>
     const allItems = [
       // 1. Farm & Poultry (Primary)
-      { name: 'Chicken Cage', category: 'Farm & Poultry', icon: '🐓', link: 'farm-poultry/chicken-cage/chicken-cage.html', desc: 'Heavy-duty galvanized wire poultry cage.' },
+      {
+        name: 'Chicken Cage',
+        category: 'Farm & Poultry',
+        icon: '🐓',
+        image: 'farm-poultry/chicken-cage/chicken-cage-1.png',
+        link: 'farm-poultry/chicken-cage/chicken-cage.html',
+        desc: 'Heavy-duty galvanized wire poultry cage.'
+      },
       { name: 'Electric Fence Energiser', category: 'Farm & Poultry', icon: '⚡', link: 'farm-poultry/electric-fence-energiser/electric-fence-energiser.html', desc: 'High-voltage pulse fence security for farms.' },
       { name: 'Chicken Wall Nesting Box', category: 'Farm & Poultry', icon: '🪺', link: 'farm-poultry/chicken-wall-nesting-box/chicken-wall-nesting-box.html', desc: 'Space-saving wall-mounted laying box for hens.' },
       { name: 'Chicken Feeder', category: 'Farm & Poultry', icon: '🌾', link: 'farm-poultry/chicken-feeder.html', desc: 'Anti-spill feeder for chicks and layers.' },
@@ -208,10 +215,14 @@
       const grid = document.getElementById('randomGrid');
       grid.innerHTML = picks.map(item => {
         const isFarm = item.category === 'Farm & Poultry';
+        const mediaContent = item.image
+          ? `<img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" onerror="this.outerHTML='<span class=\\'text-4xl sm:text-5xl group-hover:scale-110 transition-transform duration-200\\'>${item.icon}</span>'" />`
+          : `<span class="text-4xl sm:text-5xl group-hover:scale-110 transition-transform duration-200">${item.icon}</span>`;
+
         return `
           <a href="${item.link}" class="group bg-white rounded-2xl border ${isFarm ? 'border-farm-200' : 'border-slate-200'} hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex flex-col overflow-hidden">
-            <div class="aspect-square w-full ${isFarm ? 'bg-farm-50' : 'bg-slate-100'} flex items-center justify-center border-b border-slate-100">
-              <span class="text-4xl sm:text-5xl group-hover:scale-110 transition-transform duration-200">${item.icon}</span>
+            <div class="aspect-square w-full ${isFarm ? 'bg-farm-50' : 'bg-slate-100'} flex items-center justify-center border-b border-slate-100 overflow-hidden">
+              ${mediaContent}
             </div>
             <div class="p-3.5 sm:p-4 flex-1 flex flex-col justify-between">
               <div>
