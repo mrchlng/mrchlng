@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgroPrime.ph | Farm &amp; General Supplies</title>
+  <title>MyStore | Farm &amp; General Supplies</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,7 +46,7 @@
         <span class="w-9 h-9 rounded-xl bg-farm-700 text-white flex items-center justify-center text-lg">🌱</span>
         <div>
           <span class="font-display font-extrabold text-lg tracking-tight block leading-none">
-            AgroPrime<span class="text-farm-600">.ph</span>
+            MyStore
           </span>
           <span class="text-[11px] text-slate-500 font-medium">Farm &amp; Multi-Supply Hub</span>
         </div>
@@ -55,9 +55,9 @@
       <!-- Quick Nav (Desktop) -->
       <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
         <a href="farm-poultry.html" class="text-farm-700 font-bold">🐓 Farm &amp; Poultry</a>
-        <a href="water-systems.html" class="hover:text-farm-700 transition">💧 Water</a>
-        <a href="tools-business.html" class="hover:text-farm-700 transition">🛠️ Tools &amp; Business</a>
         <a href="home-pet-tech.html" class="hover:text-farm-700 transition">🏠 Home &amp; Tech</a>
+        <a href="tools-business.html" class="hover:text-farm-700 transition">🛠️ Tools &amp; Business</a>
+        <a href="water-systems.html" class="hover:text-farm-700 transition">💧 Water</a>
       </nav>
     </div>
   </header>
@@ -79,7 +79,7 @@
         </p>
       </div>
 
-      <!-- 4 Category Cards (Mobile: 1-col / 2-col | Desktop: 4-col) -->
+      <!-- 4 Category Cards (Mobile: 1-col | Tablet: 2-col | Desktop: 4-col) -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
         <!-- 1. Primary Focus -->
         <a href="farm-poultry.html" class="group p-5 rounded-2xl bg-gradient-to-br from-farm-900 to-farm-800 text-white shadow-md hover:shadow-xl hover:-translate-y-0.5 transition flex flex-col justify-between">
@@ -99,15 +99,15 @@
           </div>
         </a>
 
-        <!-- 2. Water Systems -->
-        <a href="water-systems.html" class="group p-5 rounded-2xl bg-white border border-slate-200 hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex flex-col justify-between">
+        <!-- 2. Home, Pet & Tech -->
+        <a href="home-pet-tech.html" class="group p-5 rounded-2xl bg-white border border-slate-200 hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-3xl">💧</span>
+              <span class="text-3xl">🏠</span>
               <span class="text-[11px] font-semibold text-slate-400">02</span>
             </div>
-            <h2 class="font-display text-lg font-extrabold text-slate-900 group-hover:text-farm-700">Water Systems</h2>
-            <p class="text-xs text-slate-500 mt-1">Solar water pump, portable water tank &amp; water drum</p>
+            <h2 class="font-display text-lg font-extrabold text-slate-900 group-hover:text-farm-700">Home, Pet &amp; Tech</h2>
+            <p class="text-xs text-slate-500 mt-1">Cat cage, lagayan ng plato, duyan, cutter, mobile &amp; speaker</p>
           </div>
           <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-farm-700">
             <span>Open Category</span>
@@ -131,15 +131,15 @@
           </div>
         </a>
 
-        <!-- 4. Home, Pet & Tech -->
-        <a href="home-pet-tech.html" class="group p-5 rounded-2xl bg-white border border-slate-200 hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex flex-col justify-between">
+        <!-- 4. Water Systems -->
+        <a href="water-systems.html" class="group p-5 rounded-2xl bg-white border border-slate-200 hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-3xl">🏠</span>
+              <span class="text-3xl">💧</span>
               <span class="text-[11px] font-semibold text-slate-400">04</span>
             </div>
-            <h2 class="font-display text-lg font-extrabold text-slate-900 group-hover:text-farm-700">Home, Pet &amp; Tech</h2>
-            <p class="text-xs text-slate-500 mt-1">Cat cage, lagayan ng plato, duyan, cutter, mobile &amp; speaker</p>
+            <h2 class="font-display text-lg font-extrabold text-slate-900 group-hover:text-farm-700">Water Systems</h2>
+            <p class="text-xs text-slate-500 mt-1">Solar water pump, portable water tank &amp; water drum</p>
           </div>
           <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-farm-700">
             <span>Open Category</span>
@@ -175,13 +175,13 @@
 
   <!-- FOOTER -->
   <footer class="bg-slate-900 text-slate-400 text-xs py-6 text-center border-t border-slate-800 mt-8">
-    AgroPrime.ph — Farm, Water, Tools &amp; Everyday Supplies
+    MyStore — Farm, Home, Tools &amp; Water Supplies
   </footer>
 
   <script>
     // ALL 19 PRODUCTS WITH LINKS TO THEIR INDIVIDUAL HTML PAGES
     const allItems = [
-      // Farm & Poultry (Primary)
+      // 1. Farm & Poultry (Primary)
       { name: 'Chicken Cage', category: 'Farm & Poultry', icon: '🐓', link: 'chicken-cage.html', desc: 'Heavy-duty galvanized wire poultry cage.' },
       { name: 'Electric Fence Energiser', category: 'Farm & Poultry', icon: '⚡', link: 'electric-fence-energiser.html', desc: 'High-voltage pulse fence security for farms.' },
       { name: 'Chicken Feeder', category: 'Farm & Poultry', icon: '🌾', link: 'chicken-feeder.html', desc: 'Anti-spill feeder for chicks and layers.' },
@@ -189,28 +189,27 @@
       { name: 'Fertile Eggs', category: 'Farm & Poultry', icon: '🥚', link: 'fertile-eggs.html', desc: 'Fresh, high-fertility hatching eggs.' },
       { name: 'Hydroponic Rack', category: 'Farm & Poultry', icon: '🥬', link: 'hydroponic-rack.html', desc: 'Vertical soil-free vegetable growing rack.' },
 
-      // Water Systems
-      { name: 'Solar Water Pump', category: 'Water Systems', icon: '☀️', link: 'solar-water-pump.html', desc: 'Off-grid solar-powered irrigation pump.' },
-      { name: 'Portable Water Tank', category: 'Water Systems', icon: '💧', link: 'portable-water-tank.html', desc: 'Collapsible heavy-duty water storage tank.' },
-      { name: 'Drum (Lagayan ng Tubig)', category: 'Water Systems', icon: '🛢️', link: 'drum-lagayan-ng-tubig.html', desc: 'Thick HDPE drum for clean water storage.' },
-
-      // Tools & Business
-      { name: 'Welding Machine', category: 'Tools & Business', icon: '🔥', link: 'welding-machine.html', desc: 'Portable IGBT inverter welding machine.' },
-      { name: 'Tools', category: 'Tools & Business', icon: '🧰', link: 'tools.html', desc: 'Complete heavy-duty repair & mechanic tool kit.' },
-      { name: 'Pressure Washer', category: 'Tools & Business', icon: '💦', link: 'pressure-washer.html', desc: 'High-pressure cleaner for cages & vehicles.' },
-      { name: 'Vendo Carwash', category: 'Tools & Business', icon: '🪙', link: 'vendo-carwash.html', desc: 'Coin-operated self-service carwash machine.' },
-
-      // Home, Pet & Tech
+      // 2. Home, Pet & Tech
       { name: 'Cat Cage', category: 'Home, Pet & Tech', icon: '🐈', link: 'cat-cage.html', desc: 'Multi-tier collapsible wire pet cage.' },
       { name: 'Lagayan ng Plato', category: 'Home, Pet & Tech', icon: '🍽️', link: 'lagayan-ng-plato.html', desc: '2-tier rust-proof kitchen dish rack drainer.' },
       { name: 'Duyan', category: 'Home, Pet & Tech', icon: '🌴', link: 'duyan.html', desc: 'Durable woven hammock for outdoor or indoor rest.' },
       { name: 'Vegetable Cutter', category: 'Home, Pet & Tech', icon: '🥕', link: 'vegetable-cutter.html', desc: 'Multi-blade kitchen slicer & chopper.' },
       { name: 'Mobile Phone', category: 'Home, Pet & Tech', icon: '📱', link: 'mobile-phone.html', desc: 'Long-battery smartphone for daily & business use.' },
-      { name: 'Speaker', category: 'Home, Pet & Tech', icon: '🔊', link: 'speaker.html', desc: 'Portable wireless Bluetooth & FM speaker.' }
+      { name: 'Speaker', category: 'Home, Pet & Tech', icon: '🔊', link: 'speaker.html', desc: 'Portable wireless Bluetooth & FM speaker.' },
+
+      // 3. Tools & Business
+      { name: 'Welding Machine', category: 'Tools & Business', icon: '🔥', link: 'welding-machine.html', desc: 'Portable IGBT inverter welding machine.' },
+      { name: 'Tools', category: 'Tools & Business', icon: '🧰', link: 'tools.html', desc: 'Complete heavy-duty repair & mechanic tool kit.' },
+      { name: 'Pressure Washer', category: 'Tools & Business', icon: '💦', link: 'pressure-washer.html', desc: 'High-pressure cleaner for cages & vehicles.' },
+      { name: 'Vendo Carwash', category: 'Tools & Business', icon: '🪙', link: 'vendo-carwash.html', desc: 'Coin-operated self-service carwash machine.' },
+
+      // 4. Water Systems
+      { name: 'Solar Water Pump', category: 'Water Systems', icon: '☀️', link: 'solar-water-pump.html', desc: 'Off-grid solar-powered irrigation pump.' },
+      { name: 'Portable Water Tank', category: 'Water Systems', icon: '💧', link: 'portable-water-tank.html', desc: 'Collapsible heavy-duty water storage tank.' },
+      { name: 'Drum (Lagayan ng Tubig)', category: 'Water Systems', icon: '🛢️', link: 'drum-lagayan-ng-tubig.html', desc: 'Thick HDPE drum for clean water storage.' }
     ];
 
     function renderRandomItems() {
-      // Shuffle array (Fisher-Yates) and pick 8 random items (fits 2-col mobile & 4-col PC evenly)
       const shuffled = [...allItems];
       for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -248,7 +247,6 @@
       }).join('');
     }
 
-    // Load random items on page load
     renderRandomItems();
   </script>
 </body>
