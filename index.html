@@ -85,7 +85,7 @@
               </span>
             </div>
             <h2 class="font-display text-lg font-extrabold">Farm &amp; Poultry</h2>
-            <p class="text-xs text-farm-200 mt-1">Cages, feeders, incubators, fertile eggs, fence &amp; hydroponics</p>
+            <p class="text-xs text-farm-200 mt-1">Cages, fence energiser, nesting box, feeders, incubators, fertile eggs &amp; hydroponics</p>
           </div>
           <div class="mt-4 pt-3 border-t border-white/15 flex items-center justify-between text-xs font-bold text-harvest-400">
             <span>Open Category</span>
@@ -167,15 +167,15 @@
   </footer>
 
   <script>
-    // ALL 19 PRODUCTS WITH LINKS TO THEIR INDIVIDUAL PAGES / FOLDERS
     const allItems = [
       // 1. Farm & Poultry (Primary)
       { name: 'Chicken Cage', category: 'Farm & Poultry', icon: '🐓', link: 'farm-poultry/chicken-cage/chicken-cage.html', desc: 'Heavy-duty galvanized wire poultry cage.' },
       { name: 'Electric Fence Energiser', category: 'Farm & Poultry', icon: '⚡', link: 'farm-poultry/electric-fence-energiser/electric-fence-energiser.html', desc: 'High-voltage pulse fence security for farms.' },
-      { name: 'Chicken Feeder', category: 'Farm & Poultry', icon: '🌾', link: 'chicken-feeder.html', desc: 'Anti-spill feeder for chicks and layers.' },
-      { name: 'Egg Incubator', category: 'Farm & Poultry', icon: '🐣', link: 'egg-incubator.html', desc: 'Digital automatic egg turning incubator.' },
-      { name: 'Fertile Eggs', category: 'Farm & Poultry', icon: '🥚', link: 'fertile-eggs.html', desc: 'Fresh, high-fertility hatching eggs.' },
-      { name: 'Hydroponic Rack', category: 'Farm & Poultry', icon: '🥬', link: 'hydroponic-rack.html', desc: 'Vertical soil-free vegetable growing rack.' },
+      { name: 'Chicken Wall Nesting Box', category: 'Farm & Poultry', icon: '🪺', link: 'farm-poultry/chicken-wall-nesting-box/chicken-wall-nesting-box.html', desc: 'Space-saving wall-mounted laying box for hens.' },
+      { name: 'Chicken Feeder', category: 'Farm & Poultry', icon: '🌾', link: 'farm-poultry/chicken-feeder.html', desc: 'Anti-spill feeder for chicks and layers.' },
+      { name: 'Egg Incubator', category: 'Farm & Poultry', icon: '🐣', link: 'farm-poultry/egg-incubator.html', desc: 'Digital automatic egg turning incubator.' },
+      { name: 'Fertile Eggs', category: 'Farm & Poultry', icon: '🥚', link: 'farm-poultry/fertile-eggs.html', desc: 'Fresh, high-fertility hatching eggs.' },
+      { name: 'Hydroponic Rack', category: 'Farm & Poultry', icon: '🥬', link: 'farm-poultry/hydroponic-rack.html', desc: 'Vertical soil-free vegetable growing rack.' },
 
       // 2. Home, Pet & Tech
       { name: 'Cat Cage', category: 'Home, Pet & Tech', icon: '🐈', link: 'cat-cage.html', desc: 'Multi-tier collapsible wire pet cage.' },
@@ -210,7 +210,7 @@
         const isFarm = item.category === 'Farm & Poultry';
         return `
           <a href="${item.link}" class="group bg-white rounded-2xl border ${isFarm ? 'border-farm-200' : 'border-slate-200'} hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex flex-col overflow-hidden">
-            <div class="h-28 sm:h-32 ${isFarm ? 'bg-farm-50' : 'bg-slate-100'} flex items-center justify-center border-b border-slate-100">
+            <div class="aspect-square w-full ${isFarm ? 'bg-farm-50' : 'bg-slate-100'} flex items-center justify-center border-b border-slate-100">
               <span class="text-4xl sm:text-5xl group-hover:scale-110 transition-transform duration-200">${item.icon}</span>
             </div>
             <div class="p-3.5 sm:p-4 flex-1 flex flex-col justify-between">
