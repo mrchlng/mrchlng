@@ -147,7 +147,7 @@
     <section>
       <div class="flex items-center justify-between gap-3 border-b border-slate-200 pb-3.5 mb-6">
         <span class="text-xs font-bold uppercase tracking-wider text-farm-700">Random Items</span>
-        <button onclick="renderRandomItems()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 hover:border-farm-600 text-xs sm:text-sm font-semibold text-slate-700 hover:text-farm-700 shadow-2xs transition cursor-pointer">
+        <button type="button" onclick="renderRandomItems()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 hover:border-farm-600 text-xs sm:text-sm font-semibold text-slate-700 hover:text-farm-700 shadow-2xs transition cursor-pointer">
           <span>🔀</span>
           <span>Shuffle</span>
         </button>
@@ -215,6 +215,13 @@
       { name: 'Drum (Lagayan ng Tubig)', category: 'Water Systems', image: '', link: 'drum-lagayan-ng-tubig.html', desc: 'Thick HDPE drum for clean water storage.' }
     ];
 
+    function handleImageError(imgEl) {
+      const parent = imgEl.parentElement;
+      if (parent) {
+        parent.innerHTML = '<span class="text-xs font-semibold text-slate-400">No Image</span>';
+      }
+    }
+
     function renderRandomItems() {
       const shuffled = [...allItems];
       for (let i = shuffled.length - 1; i > 0; i--) {
@@ -227,7 +234,7 @@
       grid.innerHTML = picks.map(item => {
         const isFarm = item.category === 'Farm & Poultry';
         const mediaContent = item.image
-          ? `<img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" onerror="this.outerHTML='<span class=\\'text-xs font-semibold text-slate-400\\'>No Image</span>'" />`
+          ? `<img src="${item.image}" alt="${item.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" onerror="handleImageError(this)" />`
           : `<span class="text-xs font-semibold text-slate-400">No Image</span>`;
 
         return `
