@@ -63,7 +63,7 @@
   <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12">
 
     <!-- Products Grid (Mobile: 2-col | Tablet: 3-col | PC: 3-col / 4-col) -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5 items-start">
 
       <!-- 1. Chicken Cage -->
       <a href="chicken-cage.html" class="group bg-white rounded-2xl border border-farm-200 hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex flex-col overflow-hidden">
@@ -86,13 +86,13 @@
         </div>
       </a>
 
-      <!-- 2. Electric Fence Energiser (Folder path + Image) -->
+      <!-- 2. Electric Fence Energiser (Full image, no excess) -->
       <a href="electric-fence-energiser/electric-fence-energiser.html" class="group bg-white rounded-2xl border border-farm-200 hover:border-farm-600 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition flex flex-col overflow-hidden">
-        <div class="h-28 sm:h-32 bg-white flex items-center justify-center border-b border-slate-100 overflow-hidden p-2">
+        <div class="w-full bg-farm-50 flex items-center justify-center border-b border-slate-100 overflow-hidden">
           <img
             src="electric-fence-energiser/electric-fence-energiser-1.png"
             alt="Electric Fence Energiser"
-            class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-200"
+            class="w-full h-auto block group-hover:scale-105 transition-transform duration-200"
           />
         </div>
         <div class="p-3.5 sm:p-4 flex-1 flex flex-col justify-between">
