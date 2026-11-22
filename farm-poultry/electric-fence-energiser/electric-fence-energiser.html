@@ -58,26 +58,78 @@
   </header>
 
   <!-- MAIN CONTENT -->
-  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12">
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- BREADCRUMB -->
+    <nav aria-label="Breadcrumb" class="mb-5 flex items-center gap-1.5 text-xs sm:text-sm text-slate-500 flex-wrap">
+      <a href="../../index.html" class="hover:text-farm-700 font-medium transition">
+        Home
+      </a>
+      <span class="text-slate-400">/</span>
+      <a href="../farm-poultry.html" class="hover:text-farm-700 font-medium transition">
+        Farm &amp; Poultry
+      </a>
+      <span class="text-slate-400">/</span>
+      <span class="font-semibold text-slate-800">
+        Electric Fence Energiser
+      </span>
+    </nav>
+
     <div class="bg-white rounded-3xl border border-farm-200 shadow-xs overflow-hidden grid grid-cols-1 md:grid-cols-2">
 
-      <!-- PRODUCT GALLERY (2 IMAGES) -->
+      <!-- PRODUCT IMAGE CAROUSEL -->
       <div class="bg-farm-50 flex flex-col items-center justify-center p-4 sm:p-6 border-b md:border-b-0 md:border-r border-slate-100 gap-4">
-        <div class="w-full max-w-sm aspect-square bg-white rounded-2xl border border-slate-100 overflow-hidden flex items-center justify-center">
+        <div class="relative w-full max-w-sm aspect-square bg-white rounded-2xl border border-slate-100 overflow-hidden flex items-center justify-center">
           <img
-            id="mainProductImage"
+            id="carouselImage"
             src="electric-fence-energiser-1.png"
             alt="Electric Fence Energiser"
-            class="w-full h-full object-contain"
+            class="w-full h-full object-contain transition-opacity duration-200"
           />
+
+          <!-- PREV BUTTON -->
+          <button
+            type="button"
+            onclick="prevSlide()"
+            aria-label="Previous image"
+            class="absolute left-2.5 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white border border-slate-200 text-slate-800 shadow-xs flex items-center justify-center text-base font-bold transition cursor-pointer"
+          >
+            ‹
+          </button>
+
+          <!-- NEXT BUTTON -->
+          <button
+            type="button"
+            onclick="nextSlide()"
+            aria-label="Next image"
+            class="absolute right-2.5 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white border border-slate-200 text-slate-800 shadow-xs flex items-center justify-center text-base font-bold transition cursor-pointer"
+          >
+            ›
+          </button>
+
+          <!-- DOT INDICATORS -->
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-white/85 backdrop-blur px-2.5 py-1.5 rounded-full border border-slate-200/80">
+            <button
+              type="button"
+              onclick="goToSlide(0)"
+              aria-label="Slide 1"
+              class="carousel-dot w-2.5 h-2.5 rounded-full bg-farm-600 transition cursor-pointer"
+            ></button>
+            <button
+              type="button"
+              onclick="goToSlide(1)"
+              aria-label="Slide 2"
+              class="carousel-dot w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition cursor-pointer"
+            ></button>
+          </div>
         </div>
 
-        <!-- THUMBNAIL SWITCHER -->
+        <!-- THUMBNAILS -->
         <div class="grid grid-cols-2 gap-3 w-full max-w-sm">
           <button
             type="button"
-            onclick="selectGalleryImage('electric-fence-energiser-1.png', this)"
-            class="gallery-thumb aspect-square rounded-xl overflow-hidden border-2 border-farm-600 bg-white p-1 transition cursor-pointer"
+            onclick="goToSlide(0)"
+            class="carousel-thumb aspect-square rounded-xl overflow-hidden border-2 border-farm-600 bg-white p-1 transition cursor-pointer"
             aria-label="View image 1"
           >
             <img
@@ -89,8 +141,8 @@
 
           <button
             type="button"
-            onclick="selectGalleryImage('electric-fence-energiser-2.png', this)"
-            class="gallery-thumb aspect-square rounded-xl overflow-hidden border-2 border-transparent hover:border-farm-600 bg-white p-1 transition cursor-pointer"
+            onclick="goToSlide(1)"
+            class="carousel-thumb aspect-square rounded-xl overflow-hidden border-2 border-transparent hover:border-farm-600 bg-white p-1 transition cursor-pointer"
             aria-label="View image 2"
           >
             <img
@@ -163,17 +215,59 @@
   </footer>
 
   <script>
-    function selectGalleryImage(src, btn) {
-      const mainImg = document.getElementById('mainProductImage');
-      mainImg.src = src;
+    const carouselImages = [
+      {
+        src: 'electric-fence-energiser-1.png',
+        alt: 'Electric Fence Energiser View 1',
+      },
+      {
+        src: 'electric-fence-energiser-2.png',
+        alt: 'Electric Fence Energiser View 2',
+      },
+    ];
 
-      document.querySelectorAll('.gallery-thumb').forEach((thumb) => {
-        thumb.classList.remove('border-farm-600');
-        thumb.classList.add('border-transparent');
+    let currentSlide = 0;
+
+    function renderCarousel() {
+      const mainImg = document.getElementById('carouselImage');
+      const dots = document.querySelectorAll('.carousel-dot');
+      const thumbs = document.querySelectorAll('.carousel-thumb');
+
+      mainImg.src = carouselImages[currentSlide].src;
+      mainImg.alt = carouselImages[currentSlide].alt;
+
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.classList.remove('bg-slate-300', 'hover:bg-slate-400');
+          dot.classList.add('bg-farm-600');
+        } else {
+          dot.classList.remove('bg-farm-600');
+          dot.classList.add('bg-slate-300', 'hover:bg-slate-400');
+        }
       });
 
-      btn.classList.remove('border-transparent');
-      btn.classList.add('border-farm-600');
+      thumbs.forEach((thumb, idx) => {
+        if (idx === currentSlide) {
+          thumb.classList.remove('border-transparent');
+          thumb.classList.add('border-farm-600');
+        } else {
+          thumb.classList.remove('border-farm-600');
+          thumb.classList.add('border-transparent');
+        }
+      });
+    }
+
+    function goToSlide(index) {
+      currentSlide = (index + carouselImages.length) % carouselImages.length;
+      renderCarousel();
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
     }
   </script>
 
